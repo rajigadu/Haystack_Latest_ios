@@ -2,24 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationSceneManifest</key>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires access to the photo library for changeing profile picture .</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires  location access permission from you to list the near by events based on location.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app requires  location access permission from you to list the near by events based on location.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app requires  location access permission from you to list the near by events based on location.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>For add members to group we need you contacts.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires access to the camera for changeing profile picture .</string>
+	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
-		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-					<key>UISceneStoryboardFile</key>
-					<string>Main</string>
-				</dict>
-			</array>
-		</dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
 	</dict>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+		<string>comgooglemaps-x-callback</string>
+	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.anaad.Haystack.Army</string>
+	</array>
 </dict>
 </plist>
