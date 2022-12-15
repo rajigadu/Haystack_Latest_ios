@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E2024DAC25FEC4FFF26CAC1 /* Pods_HayStack_Latest_HayStack_LatestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5EE900DDECC52154C5AF04E /* Pods_HayStack_Latest_HayStack_LatestUITests.framework */; };
+		6296DC069EF456FD0427B3CF /* Pods_HayStack_Latest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9056EF80EF72A3B810C32AB9 /* Pods_HayStack_Latest.framework */; };
+		AF7779F96EC288BB4520AFAD /* Pods_HayStack_LatestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81897D1D2D40B50D492AA137 /* Pods_HayStack_LatestTests.framework */; };
 		BA9B432B294B5819000DE5AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B432A294B5819000DE5AC /* AppDelegate.swift */; };
 		BA9B432D294B5819000DE5AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B432C294B5819000DE5AC /* SceneDelegate.swift */; };
 		BA9B432F294B5819000DE5AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B432E294B5819000DE5AC /* ViewController.swift */; };
@@ -37,6 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CC4E4446C1593DD7B717918 /* Pods-HayStack-LatestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-LatestTests.release.xcconfig"; path = "Target Support Files/Pods-HayStack-LatestTests/Pods-HayStack-LatestTests.release.xcconfig"; sourceTree = "<group>"; };
+		23F404EBBAD93DDF6F282525 /* Pods-HayStack-Latest-HayStack-LatestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-Latest-HayStack-LatestUITests.debug.xcconfig"; path = "Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		542222C9897BCA532DB56644 /* Pods-HayStack-Latest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-Latest.release.xcconfig"; path = "Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest.release.xcconfig"; sourceTree = "<group>"; };
+		69AC6CE5AA4A8F7852F17990 /* Pods-HayStack-Latest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-Latest.debug.xcconfig"; path = "Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest.debug.xcconfig"; sourceTree = "<group>"; };
+		81897D1D2D40B50D492AA137 /* Pods_HayStack_LatestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HayStack_LatestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9056EF80EF72A3B810C32AB9 /* Pods_HayStack_Latest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HayStack_Latest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9B4327294B5819000DE5AC /* HayStack-Latest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HayStack-Latest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9B432A294B5819000DE5AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA9B432C294B5819000DE5AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +60,9 @@
 		BA9B434A294B581C000DE5AC /* HayStack-LatestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HayStack-LatestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9B434E294B581C000DE5AC /* HayStack_LatestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayStack_LatestUITests.swift; sourceTree = "<group>"; };
 		BA9B4350294B581C000DE5AC /* HayStack_LatestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayStack_LatestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BAF74EE5D73E68AB1AA10ED2 /* Pods-HayStack-Latest-HayStack-LatestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-Latest-HayStack-LatestUITests.release.xcconfig"; path = "Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E0C5920145ECE3C6814F7BA5 /* Pods-HayStack-LatestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-LatestTests.debug.xcconfig"; path = "Target Support Files/Pods-HayStack-LatestTests/Pods-HayStack-LatestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5EE900DDECC52154C5AF04E /* Pods_HayStack_Latest_HayStack_LatestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HayStack_Latest_HayStack_LatestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6296DC069EF456FD0427B3CF /* Pods_HayStack_Latest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF7779F96EC288BB4520AFAD /* Pods_HayStack_LatestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E2024DAC25FEC4FFF26CAC1 /* Pods_HayStack_Latest_HayStack_LatestUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12E8E4A9996406252E01AA33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9056EF80EF72A3B810C32AB9 /* Pods_HayStack_Latest.framework */,
+				E5EE900DDECC52154C5AF04E /* Pods_HayStack_Latest_HayStack_LatestUITests.framework */,
+				81897D1D2D40B50D492AA137 /* Pods_HayStack_LatestTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		675FFB116A742F54B14BFAEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69AC6CE5AA4A8F7852F17990 /* Pods-HayStack-Latest.debug.xcconfig */,
+				542222C9897BCA532DB56644 /* Pods-HayStack-Latest.release.xcconfig */,
+				23F404EBBAD93DDF6F282525 /* Pods-HayStack-Latest-HayStack-LatestUITests.debug.xcconfig */,
+				BAF74EE5D73E68AB1AA10ED2 /* Pods-HayStack-Latest-HayStack-LatestUITests.release.xcconfig */,
+				E0C5920145ECE3C6814F7BA5 /* Pods-HayStack-LatestTests.debug.xcconfig */,
+				0CC4E4446C1593DD7B717918 /* Pods-HayStack-LatestTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BA9B431E294B5818000DE5AC = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +124,8 @@
 				BA9B4343294B581C000DE5AC /* HayStack-LatestTests */,
 				BA9B434D294B581C000DE5AC /* HayStack-LatestUITests */,
 				BA9B4328294B5819000DE5AC /* Products */,
+				675FFB116A742F54B14BFAEF /* Pods */,
+				12E8E4A9996406252E01AA33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA9B4354294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-Latest" */;
 			buildPhases = (
+				C7675F0449B486640F45B6DD /* [CP] Check Pods Manifest.lock */,
 				BA9B4323294B5819000DE5AC /* Sources */,
 				BA9B4324294B5819000DE5AC /* Frameworks */,
 				BA9B4325294B5819000DE5AC /* Resources */,
+				9838CA1FD741F9187B6C5F69 /* [CP] Embed Pods Frameworks */,
+				87AB21E7D7D008B47372A171 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA9B4357294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-LatestTests" */;
 			buildPhases = (
+				A4B2DD1DE437914DA582E58A /* [CP] Check Pods Manifest.lock */,
 				BA9B433C294B581C000DE5AC /* Sources */,
 				BA9B433D294B581C000DE5AC /* Frameworks */,
 				BA9B433E294B581C000DE5AC /* Resources */,
@@ -172,9 +217,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA9B435A294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-LatestUITests" */;
 			buildPhases = (
+				16E1AF330DF867B7D244A252 /* [CP] Check Pods Manifest.lock */,
 				BA9B4346294B581C000DE5AC /* Sources */,
 				BA9B4347294B581C000DE5AC /* Frameworks */,
 				BA9B4348294B581C000DE5AC /* Resources */,
+				E610B314B9045B9866AF3DC1 /* [CP] Embed Pods Frameworks */,
+				C9931ED82F545CFB9FB80963 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,6 +303,143 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16E1AF330DF867B7D244A252 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HayStack-Latest-HayStack-LatestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87AB21E7D7D008B47372A171 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9838CA1FD741F9187B6C5F69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4B2DD1DE437914DA582E58A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HayStack-LatestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7675F0449B486640F45B6DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HayStack-Latest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9931ED82F545CFB9FB80963 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E610B314B9045B9866AF3DC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA9B4323294B5819000DE5AC /* Sources */ = {
@@ -436,6 +621,7 @@
 		};
 		BA9B4355294B581C000DE5AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69AC6CE5AA4A8F7852F17990 /* Pods-HayStack-Latest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +650,7 @@
 		};
 		BA9B4356294B581C000DE5AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 542222C9897BCA532DB56644 /* Pods-HayStack-Latest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,6 +679,7 @@
 		};
 		BA9B4358294B581C000DE5AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0C5920145ECE3C6814F7BA5 /* Pods-HayStack-LatestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +700,7 @@
 		};
 		BA9B4359294B581C000DE5AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CC4E4446C1593DD7B717918 /* Pods-HayStack-LatestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +721,7 @@
 		};
 		BA9B435B294B581C000DE5AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23F404EBBAD93DDF6F282525 /* Pods-HayStack-Latest-HayStack-LatestUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +740,7 @@
 		};
 		BA9B435C294B581C000DE5AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAF74EE5D73E68AB1AA10ED2 /* Pods-HayStack-Latest-HayStack-LatestUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

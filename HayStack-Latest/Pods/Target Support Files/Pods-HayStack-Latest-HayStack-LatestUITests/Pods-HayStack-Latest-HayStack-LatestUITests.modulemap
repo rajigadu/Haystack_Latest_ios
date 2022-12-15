@@ -1,0 +1,6 @@
+framework module Pods_HayStack_Latest_HayStack_LatestUITests {
+  umbrella header "Pods-HayStack-Latest-HayStack-LatestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
