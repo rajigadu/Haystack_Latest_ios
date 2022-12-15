@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA9B432B294B5819000DE5AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B432A294B5819000DE5AC /* AppDelegate.swift */; };
+		BA9B432D294B5819000DE5AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B432C294B5819000DE5AC /* SceneDelegate.swift */; };
+		BA9B432F294B5819000DE5AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B432E294B5819000DE5AC /* ViewController.swift */; };
+		BA9B4332294B5819000DE5AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9B4330294B5819000DE5AC /* Main.storyboard */; };
+		BA9B4335294B5819000DE5AC /* HayStack_Latest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA9B4333294B5819000DE5AC /* HayStack_Latest.xcdatamodeld */; };
+		BA9B4337294B581C000DE5AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA9B4336294B581C000DE5AC /* Assets.xcassets */; };
+		BA9B433A294B581C000DE5AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9B4338294B581C000DE5AC /* LaunchScreen.storyboard */; };
+		BA9B4345294B581C000DE5AC /* HayStack_LatestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B4344294B581C000DE5AC /* HayStack_LatestTests.swift */; };
+		BA9B434F294B581C000DE5AC /* HayStack_LatestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B434E294B581C000DE5AC /* HayStack_LatestUITests.swift */; };
+		BA9B4351294B581C000DE5AC /* HayStack_LatestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B4350294B581C000DE5AC /* HayStack_LatestUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA9B4341294B581C000DE5AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA9B431F294B5818000DE5AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA9B4326294B5819000DE5AC;
+			remoteInfo = "HayStack-Latest";
+		};
+		BA9B434B294B581C000DE5AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA9B431F294B5818000DE5AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA9B4326294B5819000DE5AC;
+			remoteInfo = "HayStack-Latest";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA9B4327294B5819000DE5AC /* HayStack-Latest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HayStack-Latest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA9B432A294B5819000DE5AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BA9B432C294B5819000DE5AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BA9B432E294B5819000DE5AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA9B4331294B5819000DE5AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA9B4334294B5819000DE5AC /* HayStack_Latest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HayStack_Latest.xcdatamodel; sourceTree = "<group>"; };
+		BA9B4336294B581C000DE5AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA9B4339294B581C000DE5AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA9B433B294B581C000DE5AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA9B4340294B581C000DE5AC /* HayStack-LatestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HayStack-LatestTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA9B4344294B581C000DE5AC /* HayStack_LatestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayStack_LatestTests.swift; sourceTree = "<group>"; };
+		BA9B434A294B581C000DE5AC /* HayStack-LatestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HayStack-LatestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA9B434E294B581C000DE5AC /* HayStack_LatestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayStack_LatestUITests.swift; sourceTree = "<group>"; };
+		BA9B4350294B581C000DE5AC /* HayStack_LatestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayStack_LatestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA9B4324294B5819000DE5AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA9B433D294B581C000DE5AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA9B4347294B581C000DE5AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA9B431E294B5818000DE5AC = {
+			isa = PBXGroup;
+			children = (
+				BA9B4329294B5819000DE5AC /* HayStack-Latest */,
+				BA9B4343294B581C000DE5AC /* HayStack-LatestTests */,
+				BA9B434D294B581C000DE5AC /* HayStack-LatestUITests */,
+				BA9B4328294B5819000DE5AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA9B4328294B5819000DE5AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA9B4327294B5819000DE5AC /* HayStack-Latest.app */,
+				BA9B4340294B581C000DE5AC /* HayStack-LatestTests.xctest */,
+				BA9B434A294B581C000DE5AC /* HayStack-LatestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA9B4329294B5819000DE5AC /* HayStack-Latest */ = {
+			isa = PBXGroup;
+			children = (
+				BA9B432A294B5819000DE5AC /* AppDelegate.swift */,
+				BA9B432C294B5819000DE5AC /* SceneDelegate.swift */,
+				BA9B432E294B5819000DE5AC /* ViewController.swift */,
+				BA9B4330294B5819000DE5AC /* Main.storyboard */,
+				BA9B4336294B581C000DE5AC /* Assets.xcassets */,
+				BA9B4338294B581C000DE5AC /* LaunchScreen.storyboard */,
+				BA9B433B294B581C000DE5AC /* Info.plist */,
+				BA9B4333294B5819000DE5AC /* HayStack_Latest.xcdatamodeld */,
+			);
+			path = "HayStack-Latest";
+			sourceTree = "<group>";
+		};
+		BA9B4343294B581C000DE5AC /* HayStack-LatestTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA9B4344294B581C000DE5AC /* HayStack_LatestTests.swift */,
+			);
+			path = "HayStack-LatestTests";
+			sourceTree = "<group>";
+		};
+		BA9B434D294B581C000DE5AC /* HayStack-LatestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BA9B434E294B581C000DE5AC /* HayStack_LatestUITests.swift */,
+				BA9B4350294B581C000DE5AC /* HayStack_LatestUITestsLaunchTests.swift */,
+			);
+			path = "HayStack-LatestUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA9B4326294B5819000DE5AC /* HayStack-Latest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA9B4354294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-Latest" */;
+			buildPhases = (
+				BA9B4323294B5819000DE5AC /* Sources */,
+				BA9B4324294B5819000DE5AC /* Frameworks */,
+				BA9B4325294B5819000DE5AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HayStack-Latest";
+			productName = "HayStack-Latest";
+			productReference = BA9B4327294B5819000DE5AC /* HayStack-Latest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA9B433F294B581C000DE5AC /* HayStack-LatestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA9B4357294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-LatestTests" */;
+			buildPhases = (
+				BA9B433C294B581C000DE5AC /* Sources */,
+				BA9B433D294B581C000DE5AC /* Frameworks */,
+				BA9B433E294B581C000DE5AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA9B4342294B581C000DE5AC /* PBXTargetDependency */,
+			);
+			name = "HayStack-LatestTests";
+			productName = "HayStack-LatestTests";
+			productReference = BA9B4340294B581C000DE5AC /* HayStack-LatestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BA9B4349294B581C000DE5AC /* HayStack-LatestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA9B435A294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-LatestUITests" */;
+			buildPhases = (
+				BA9B4346294B581C000DE5AC /* Sources */,
+				BA9B4347294B581C000DE5AC /* Frameworks */,
+				BA9B4348294B581C000DE5AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA9B434C294B581C000DE5AC /* PBXTargetDependency */,
+			);
+			name = "HayStack-LatestUITests";
+			productName = "HayStack-LatestUITests";
+			productReference = BA9B434A294B581C000DE5AC /* HayStack-LatestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA9B431F294B5818000DE5AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					BA9B4326294B5819000DE5AC = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					BA9B433F294B581C000DE5AC = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = BA9B4326294B5819000DE5AC;
+					};
+					BA9B4349294B581C000DE5AC = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = BA9B4326294B5819000DE5AC;
+					};
+				};
+			};
+			buildConfigurationList = BA9B4322294B5818000DE5AC /* Build configuration list for PBXProject "HayStack-Latest" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA9B431E294B5818000DE5AC;
+			productRefGroup = BA9B4328294B5819000DE5AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA9B4326294B5819000DE5AC /* HayStack-Latest */,
+				BA9B433F294B581C000DE5AC /* HayStack-LatestTests */,
+				BA9B4349294B581C000DE5AC /* HayStack-LatestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA9B4325294B5819000DE5AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA9B433A294B581C000DE5AC /* LaunchScreen.storyboard in Resources */,
+				BA9B4337294B581C000DE5AC /* Assets.xcassets in Resources */,
+				BA9B4332294B5819000DE5AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA9B433E294B581C000DE5AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA9B4348294B581C000DE5AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA9B4323294B5819000DE5AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA9B4335294B5819000DE5AC /* HayStack_Latest.xcdatamodeld in Sources */,
+				BA9B432F294B5819000DE5AC /* ViewController.swift in Sources */,
+				BA9B432B294B5819000DE5AC /* AppDelegate.swift in Sources */,
+				BA9B432D294B5819000DE5AC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA9B433C294B581C000DE5AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA9B4345294B581C000DE5AC /* HayStack_LatestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA9B4346294B581C000DE5AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA9B434F294B581C000DE5AC /* HayStack_LatestUITests.swift in Sources */,
+				BA9B4351294B581C000DE5AC /* HayStack_LatestUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA9B4342294B581C000DE5AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA9B4326294B5819000DE5AC /* HayStack-Latest */;
+			targetProxy = BA9B4341294B581C000DE5AC /* PBXContainerItemProxy */;
+		};
+		BA9B434C294B581C000DE5AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA9B4326294B5819000DE5AC /* HayStack-Latest */;
+			targetProxy = BA9B434B294B581C000DE5AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BA9B4330294B5819000DE5AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA9B4331294B5819000DE5AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA9B4338294B581C000DE5AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA9B4339294B581C000DE5AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA9B4352294B581C000DE5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA9B4353294B581C000DE5AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA9B4355294B581C000DE5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JV7SRCLA2P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HayStack-Latest/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RajeshGandru.HayStack-Latest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA9B4356294B581C000DE5AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JV7SRCLA2P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HayStack-Latest/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RajeshGandru.HayStack-Latest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BA9B4358294B581C000DE5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JV7SRCLA2P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RajeshGandru.HayStack-LatestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HayStack-Latest.app/HayStack-Latest";
+			};
+			name = Debug;
+		};
+		BA9B4359294B581C000DE5AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JV7SRCLA2P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RajeshGandru.HayStack-LatestTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HayStack-Latest.app/HayStack-Latest";
+			};
+			name = Release;
+		};
+		BA9B435B294B581C000DE5AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JV7SRCLA2P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RajeshGandru.HayStack-LatestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "HayStack-Latest";
+			};
+			name = Debug;
+		};
+		BA9B435C294B581C000DE5AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JV7SRCLA2P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RajeshGandru.HayStack-LatestUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "HayStack-Latest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA9B4322294B5818000DE5AC /* Build configuration list for PBXProject "HayStack-Latest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA9B4352294B581C000DE5AC /* Debug */,
+				BA9B4353294B581C000DE5AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA9B4354294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-Latest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA9B4355294B581C000DE5AC /* Debug */,
+				BA9B4356294B581C000DE5AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA9B4357294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-LatestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA9B4358294B581C000DE5AC /* Debug */,
+				BA9B4359294B581C000DE5AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA9B435A294B581C000DE5AC /* Build configuration list for PBXNativeTarget "HayStack-LatestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA9B435B294B581C000DE5AC /* Debug */,
+				BA9B435C294B581C000DE5AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA9B4333294B5819000DE5AC /* HayStack_Latest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA9B4334294B5819000DE5AC /* HayStack_Latest.xcdatamodel */,
+			);
+			currentVersion = BA9B4334294B5819000DE5AC /* HayStack_Latest.xcdatamodel */;
+			path = HayStack_Latest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BA9B431F294B5818000DE5AC /* Project object */;
+}
