@@ -37,15 +37,39 @@ class AddExtraMeberToEventVC: UIViewController {
     var MemberModel: CreateEventMemberFourthModel?
     var AddExtraMeberdelegate : AddExtraMeberToEventDelegate?
     var UpdateExtraMeberdelegate : UpdateExtraMeberToEventDelegate?
-    
+    var isPresenter = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("addNewMember"), object: nil)
 
         // Do any additional setup after loading the view.
     }
     
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        if let email = notification.userInfo?["email"] as? String {
+        // do something with your image
+            self.memberEmailtfref.text = email
+        }
+        
+        if let number = notification.userInfo?["number"] as? String {
+        // do something with your image
+            self.memberNumbertfref.text = number
+        }
+        if let name = notification.userInfo?["name"] as? String {
+        // do something with your image
+            self.memberNametfref.text = name
+        }
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.memberNumbertfref.text = ""
+        self.memberNametfref.text = ""
+        self.memberEmailtfref.text = ""
+    }
+
    
     override func viewWillAppear(_ animated: Bool) {
         if vcFrom == "EditMember"{
@@ -54,11 +78,11 @@ class AddExtraMeberToEventVC: UIViewController {
             self.memberEmailtfref.text = memberEmail
         }
         
-        if GlobalvcFrom == "addMemberFromGroup"{
-            self.memberNumbertfref.text = GlobalMemberModel?.memberNumber
-            self.memberNametfref.text = GlobalMemberModel?.membername
-            self.memberEmailtfref.text = GlobalMemberModel?.memberEmail
-        }
+//        if GlobalvcFrom == "addMemberFromGroup"{
+//            self.memberNumbertfref.text = GlobalMemberModel?.memberNumber
+//            self.memberNametfref.text = GlobalMemberModel?.membername
+//            self.memberEmailtfref.text = GlobalMemberModel?.memberEmail
+//        }
     }
     @IBAction func backBntref(_ sender: Any) {
         self.dismiss()
@@ -81,12 +105,21 @@ class AddExtraMeberToEventVC: UIViewController {
         let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
         let nxtVC = Storyboard.instantiateViewController(withIdentifier: "AllGroupListVC") as! AllGroupListVC
          nxtVC.vcFrom = "CreateEvent_AddMember"
-        self.navigationController?.pushViewController(nxtVC, animated: true)
+        if isPresenter {
+            nxtVC.isPresenter = true
+            self.present(nxtVC, animated: true)
+        } else {
+            nxtVC.isPresenter = false
+          self.navigationController?.pushViewController(nxtVC, animated: true)
+        }
         //self.present(nxtVC, animated: true)
     }
     
     
     @IBAction func addContactsBookBtnref(_ sender: Any){
+        memberEmailtfref.text = ""
+        memberNumbertfref.text = ""
+        memberNametfref.text = ""
         let contacVC = CNContactPickerViewController()
         contacVC.delegate = self
         self.present(contacVC, animated: true, completion: nil)
@@ -96,7 +129,13 @@ class AddExtraMeberToEventVC: UIViewController {
        let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "AllGroupListVC") as! AllGroupListVC
         nxtVC.vcFrom = "CreateEvent_AddExtraMember"
-       self.navigationController?.pushViewController(nxtVC, animated: true)
+        if isPresenter {
+            nxtVC.isPresenter = true
+            self.present(nxtVC, animated: true)
+        } else {
+            nxtVC.isPresenter = false
+        self.navigationController?.pushViewController(nxtVC, animated: true)
+        }
      }
     
     
@@ -264,10 +303,13 @@ extension AddExtraMeberToEventVC: CNContactPickerDelegate {
 }
 extension AddExtraMeberToEventVC{
     func AddMembersToEventValidation()-> ApiCheckValidation {
-        if memberNumbertfref.text ?? "" == "" || memberEmailtfref.text ?? "" == "" || memberNametfref.text ?? "" == ""{
+        if (memberNumbertfref.text ?? "" == "" && memberNametfref.text ?? "" == "") || (memberEmailtfref.text ?? "" == "" && memberNametfref.text ?? "" == "") {
             return ApiCheckValidation.Error("All feilds required!")
-        }else if let Emailstr = memberEmailtfref.text,!isValidEmail(Emailstr) {
-            return ApiCheckValidation.Error("Please enter Valid Email...")
+        }else if memberEmailtfref.text ?? "" != "" {
+            if let Emailstr = memberEmailtfref.text,!isValidEmail(Emailstr) {
+                return ApiCheckValidation.Error("Please enter Valid Email...")
+            }
+            return ApiCheckValidation.Success
         }else {
             return ApiCheckValidation.Success
         }

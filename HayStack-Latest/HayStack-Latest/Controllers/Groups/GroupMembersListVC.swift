@@ -28,6 +28,8 @@ class GroupMembersListVC: UIViewController {
     
     var vcFrom = ""// nxtVC.vcFrom = "CreateEvent"
     @IBOutlet weak var GroupmembersListtblref: UITableView!
+    @IBOutlet weak var addNewMember: UIButton!
+    
     var groupMembersListarr : [GroupsMemberModel] = []
     //for create event
      var AdvertiseStatus = ""
@@ -35,11 +37,12 @@ class GroupMembersListVC: UIViewController {
      var MemberModel: CreateEventMemberFourthModel?
      var FirstScreenModel: CreateEventFirstModel?
      var secondScreenModelArr: [CategorySecondModel] = []
+    var isPresenter = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
          self.headerVewref.addBottomShadow()
-       
+        addNewMember.isHidden = isPresenter == true ? true : false
         // Do any additional setup after loading the view.
     }
     
@@ -50,7 +53,11 @@ class GroupMembersListVC: UIViewController {
     
     
     @IBAction func backBtnref(_ sender: Any) {
+        if isPresenter {
+            self.dismiss()
+        } else {
         self.popToBackVC()
+        }
     }
     
     @IBAction func addMemberbtnref(_ sender: Any) {
@@ -84,7 +91,9 @@ extension GroupMembersListVC : UITableViewDelegate,UITableViewDataSource {
             cell.memberPhoneLblref.text = MemberPhone
         }
         
-        
+        cell.composebtnref.isHidden = isPresenter == true ? true : false
+        cell.deletebtnref.isHidden = isPresenter == true ? true : false
+
         
         cell.composebtnref.tag = indexPath.row
         cell.composebtnref.addTarget(self, action: #selector(EditmembersList), for: .touchUpInside)
@@ -128,7 +137,32 @@ extension GroupMembersListVC : UITableViewDelegate,UITableViewDataSource {
           
             GlobalvcFrom =  "addMemberFromGroup"
             GlobalMemberModel = CreateEventMemberFourthModel(membername: self.groupMembersListarr[indexPath.row].member ?? "", memberNumber: self.groupMembersListarr[indexPath.row].number ?? "", memberEmail: self.groupMembersListarr[indexPath.row].email ?? "")
-             self.dismiss()
+           
+            if self.isPresenter  {
+//                let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
+//                let nxtVC = Storyboard.instantiateViewController(withIdentifier: "AddMembersToEventVC") as! AddMembersToEventVC
+
+//                var presentingViewController = PublishingEventVC()
+//                self.dismiss(animated: false) {
+//                    presentingViewController.dismiss(animated: false, completion: nil)
+//                }
+                
+                isLastData = true
+                lastData = CreateEventMemberFourthModel(membername: self.groupMembersListarr[indexPath.row].member ?? "", memberNumber: self.groupMembersListarr[indexPath.row].number ?? "", memberEmail: self.groupMembersListarr[indexPath.row].email ?? "")
+                
+                
+                //self.navigationController?.popBackVC(to: AddExtraMeberToEventVC.self, animated: true)
+                
+               // self.popToFirstVC()
+                NotificationCenter.default.post(name: Notification.Name("addNewMember"), object: nil, userInfo: ["name":self.groupMembersListarr[indexPath.row].member ?? "","number":self.groupMembersListarr[indexPath.row].number ?? "","email":self.groupMembersListarr[indexPath.row].email ?? ""])
+
+                
+                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+
+                            
+            } else {
+                self.dismiss()
+            }
         }else if self.vcFrom == "CreateEvent_AddMember" {
             let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
             let nxtVC = Storyboard.instantiateViewController(withIdentifier: "AddMembersToEventVC") as! AddMembersToEventVC
@@ -138,8 +172,14 @@ extension GroupMembersListVC : UITableViewDelegate,UITableViewDataSource {
             nxtVC.HostcontactStatus = self.HostcontactStatus
             nxtVC.FirstScreenModel = self.FirstScreenModel
             nxtVC.secondScreenModelArr = self.secondScreenModelArr
+            
             self.navigationController?.pushViewController(nxtVC, animated: true)
             
+        }
+    }
+    func popToFirstVC() {
+        if let firstViewController = self.navigationController?.viewControllers[1] {
+            self.navigationController?.popToViewController(firstViewController, animated: true)
         }
     }
     
@@ -210,5 +250,13 @@ extension GroupMembersListVC {
                 self.ShowAlert(message: err)
             }
         }
+    }
+}
+extension UINavigationController {
+    func popBackVC(to vc: AnyClass, animated: Bool = true) {
+        guard let elementFound = (viewControllers.filter { $0.isKind(of: vc) }).first else {
+            fatalError("cannot pop back to \(vc) as it is not in the view hierarchy")
+        }
+        self.popToViewController(elementFound, animated: animated)
     }
 }

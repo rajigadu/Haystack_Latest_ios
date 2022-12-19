@@ -43,7 +43,10 @@ class searchEventListVC: UIViewController {
         self.popToBackVC()
     }
     
- 
+    @IBAction func moveToDashBoardbtnref(_ sender: Any) {
+        self.movetonextvc(id: "mainTabvC", storyBordid: "DashBoard")
+    }
+    
 
 }
 extension searchEventListVC :UITableViewDelegate,UITableViewDataSource {

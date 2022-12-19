@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -545,7 +544,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="753"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7N-tL-gbJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="599.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="AAe-pV-DUW">
                                                         <rect key="frame" x="87" y="36" width="240" height="128"/>
@@ -622,13 +621,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyV-UG-aId">
-                                                        <rect key="frame" x="26" y="323" width="82.5" height="19.5"/>
+                                                        <rect key="frame" x="26" y="323" width="81.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Mo-Yw-hQt" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="26" y="354.5" width="362" height="100"/>
+                                                        <rect key="frame" x="26" y="354" width="362" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="fkJ-SE-E4w"/>
@@ -647,7 +646,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivg-K3-Im4">
-                                                        <rect key="frame" x="26" y="520" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="519.5" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="fok-M9-tU0"/>
@@ -1306,6 +1305,7 @@
                     <navigationItem key="navigationItem" id="0vr-pm-pS2"/>
                     <connections>
                         <outlet property="GroupmembersListtblref" destination="y19-kl-6ew" id="AH9-iM-CeL"/>
+                        <outlet property="addNewMember" destination="yCU-x2-OSr" id="2qm-Um-gYi"/>
                         <outlet property="headerVewref" destination="QUE-Oj-2vk" id="Wgr-bV-75l"/>
                     </connections>
                 </viewController>
@@ -1759,12 +1759,12 @@
         <image name="background4" width="324" height="324.5"/>
         <image name="createNewGroup" width="320" height="45.5"/>
         <image name="deleteGroup" width="14" height="19.5"/>
-        <image name="lunchLogo" width="187" height="119"/>
+        <image name="lunchLogo" width="256" height="256"/>
         <namedColor name="#828282">
-            <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.50999999046325684" green="0.50999999046325684" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="#F6921C">
-            <color red="0.96470588235294119" green="0.5725490196078431" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9649999737739563" green="0.57300001382827759" blue="0.10999999940395355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

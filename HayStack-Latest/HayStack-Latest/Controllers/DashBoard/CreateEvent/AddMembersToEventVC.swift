@@ -54,6 +54,10 @@ class AddMembersToEventVC: UIViewController {
      }
     
     
+    @IBAction func movetoDashBoard(_ sender: Any) {
+        self.movetonextvc(id: "mainTabvC", storyBordid: "DashBoard")
+
+    }
     @IBAction func skipandContinueBntref(_ sender: Any) {
          let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
         let nxtVC = Storyboard.instantiateViewController(withIdentifier: "PublishingEventVC") as! PublishingEventVC
@@ -78,6 +82,9 @@ class AddMembersToEventVC: UIViewController {
     }
     
     @IBAction func addContactsBookBtnref(_ sender: Any){
+        self.memberNametfref.text = ""
+        self.memberNumbertfref.text = ""
+        self.memberEmailtfref.text = ""
         let contacVC = CNContactPickerViewController()
         contacVC.delegate = self
         self.present(contacVC, animated: true, completion: nil)
@@ -245,10 +252,13 @@ extension AddMembersToEventVC: CNContactPickerDelegate {
 }
 extension AddMembersToEventVC{
     func AddMembersToEventValidation()-> ApiCheckValidation {
-        if memberNumbertfref.text ?? "" == "" || memberEmailtfref.text ?? "" == "" || memberNametfref.text ?? "" == ""{
+        if (memberNumbertfref.text ?? "" == "" && memberNametfref.text ?? "" == "") || (memberEmailtfref.text ?? "" == "" && memberNametfref.text ?? "" == "") {
             return ApiCheckValidation.Error("All feilds required!")
-        }else if let Emailstr = memberEmailtfref.text,!isValidEmail(Emailstr) {
-            return ApiCheckValidation.Error("Please enter Valid Email...")
+        } else if memberEmailtfref.text ?? "" != "" {
+            if let Emailstr = memberEmailtfref.text,!isValidEmail(Emailstr) {
+                return ApiCheckValidation.Error("Please enter Valid Email...")
+            }
+            return ApiCheckValidation.Success
         }else {
             return ApiCheckValidation.Success
         }

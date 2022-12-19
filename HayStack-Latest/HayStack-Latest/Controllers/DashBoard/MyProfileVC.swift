@@ -19,7 +19,7 @@ class MyProfileVC: UIViewController {
     
     
     @IBOutlet weak var versionNumber: UILabel!
-    var ProfileTitlearr = ["Edit Profile","Change Password","Contact Us","Trems and Conditions","Logout"]
+    var ProfileTitlearr = ["Edit Profile","Change Password","Contact Us","Terms and Conditions","Logout"]
     var ProfileIconsarr = ["EditProfile","ChangePassword","ContactUS","termsAndConditions","LogOut"]
 
     override func viewDidLoad() {

@@ -72,8 +72,7 @@ class DashBoardVC: UIViewController {
         placesClient = GMSPlacesClient.shared()
         //if self.VcFrom == "" {
         
-      //  self.MyPopularEventsMehtod()
-         self.currentTime()
+        self.currentTime()
         myadressselected = false
          
         
@@ -197,23 +196,36 @@ extension DashBoardVC : UICollectionViewDelegate,UICollectionViewDataSource,UICo
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-      {
-        if collectionView == YourEventColcref {
-            return CGSize(width: self.view.frame.width, height: 250.0)
-        }else {
-            switch UIDevice.current.screenType {
-            case .iPhones_5_5s_5c_SE:
-                return CGSize(width: 158.0, height: 45.0)
-            case .iPhones_6_6s_7_8:
-                return CGSize(width: 158.0, height: 45.0)
-            default:
-                return CGSize(width: 158.0, height: 45.0)
-            }
-         }
-      }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+//      {
+//        if collectionView == YourEventColcref {
+//            switch UIDevice.current.screenType {
+//            case .iPhones_5_5s_5c_SE:
+//                //self.poppularEventsheightconstantref.constant = CGFloat(self.popularEventsArr.count * 255)
+//
+//                return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+//            case .iPhones_6_6s_7_8:
+//                //self.poppularEventsheightconstantref.constant = CGFloat(self.popularEventsArr.count * 280)
+//                return CGSize(width: self.view.frame.width, height: collectionView.bounds.height)
+//             default:
+//                //self.poppularEventsheightconstantref.constant = CGFloat(self.popularEventsArr.count * 280)
+//                return CGSize(width: self.view.frame.width, height: collectionView.bounds.height)
+//
+//            }
+//        }else {
+//            switch UIDevice.current.screenType {
+//            case .iPhones_5_5s_5c_SE:
+//                return CGSize(width: 158.0, height: 45.0)
+//            case .iPhones_6_6s_7_8:
+//                return CGSize(width: 158.0, height: 45.0)
+//            default:
+//                return CGSize(width: 158.0, height: 45.0)
+//            }
+//         }
+//      }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         if collectionView == YourEventColcref {
             let cell:EventssecondCell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventssecondCell", for: indexPath) as! EventssecondCell
             cell.widthref.constant = self.view.frame.width - 32
@@ -256,10 +268,7 @@ extension DashBoardVC : UICollectionViewDelegate,UICollectionViewDataSource,UICo
         return cell
         }
     }
-    
-    
-    
-    
+ 
     func inandoutDateFormate(inputDateformate:String,outputDateformate:String,inputdatestr:String)-> String{
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = inputDateformate

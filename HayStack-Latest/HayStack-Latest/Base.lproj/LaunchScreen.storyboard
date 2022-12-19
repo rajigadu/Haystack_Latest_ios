@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hc7-Lb-Wjf">
-                                <rect key="frame" x="113.5" y="388.5" width="187" height="119"/>
+                                <rect key="frame" x="121.5" y="362.5" width="171" height="171"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xrj-bb-a3v"/>
@@ -33,6 +33,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lunchLogo" width="187" height="119"/>
+        <image name="lunchLogo" width="170.66667175292969" height="170.66667175292969"/>
     </resources>
 </document>

@@ -7,12 +7,13 @@
 
 import UIKit
 import CoreLocation
-
+var isLastData = false
+var lastData : CreateEventMemberFourthModel?
 class publishEventCell: UITableViewCell{
     @IBOutlet weak var UserNameLblref: UILabel!
     @IBOutlet weak var UserEmailLblref: UILabel!
     @IBOutlet weak var UserNumberLblref: UILabel!
-     
+    
     @IBOutlet weak var EditBtnref: UIButton!
     @IBOutlet weak var deleteBtnref: UIButton!
 }
@@ -34,7 +35,7 @@ class PublishingEventVC: UIViewController {
     var currentLocLong = ""
     let geocoder = CLGeocoder()
     var skipBtn = true
-
+    
     
     @IBOutlet weak var MebersListTblref: UITableView!
     override func viewDidLoad() {
@@ -49,10 +50,14 @@ class PublishingEventVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if skipBtn  {
-        if MemberModel?.memberNumber != "" || MemberModel?.memberNumber != nil {
-            self.MemberModelArr.append(CreateEventMemberFourthModel(membername: MemberModel?.membername ?? "", memberNumber: MemberModel?.memberNumber ?? "", memberEmail: MemberModel?.memberEmail ?? ""))
+            if MemberModel?.memberNumber != "" || MemberModel?.memberNumber != nil {
+                self.MemberModelArr.append(CreateEventMemberFourthModel(membername: MemberModel?.membername ?? "", memberNumber: MemberModel?.memberNumber ?? "", memberEmail: MemberModel?.memberEmail ?? ""))
+            }
         }
-        }
+        
+        //        if GlobalvcFrom == "addMemberFromGroup" {
+        //            self.MemberModelArr.append(CreateEventMemberFourthModel(membername: GlobalMemberModel?.membername ?? "", memberNumber: GlobalMemberModel?.memberNumber ?? "", memberEmail: lastData?.memberEmail ?? ""))
+        //        }
         
         print(AdvertiseStatus,HostcontactStatus)
     }
@@ -61,23 +66,27 @@ class PublishingEventVC: UIViewController {
         self.popToBackVC()
     }
     
+    @IBAction func moveToDashBoard(_ sender: Any) {
+        self.movetonextvc(id: "mainTabvC", storyBordid: "DashBoard")
+    }
+    
     @IBAction func addMore(_ sender: Any) {
-         let storyboard = UIStoryboard(name: "DashBoard", bundle: nil)
+        let storyboard = UIStoryboard(name: "DashBoard", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "AddExtraMeberToEventVC")  as! AddExtraMeberToEventVC
         vc.AddExtraMeberdelegate = self
+        vc.isPresenter = true
+        // self.navigationController?.pushViewController(vc, animated: false)
         self.present(vc, animated: true)
-
-
-     }
+    }
     
     @IBAction func publishBntref(_ sender: Any) {
         indicator.showActivityIndicator()
-         if let cityname = self.FirstScreenModel?.CityName as? String,let satename =  self.FirstScreenModel?.StateName as? String,let countrycode =  self.FirstScreenModel?.CountryName as? String,let pincode = self.FirstScreenModel?.ZipCode as? String {
-             let myAddress =  cityname + "," + satename + ","  + countrycode + ","  + pincode
-              self.findMyAddressLatAndLong(Address: myAddress)
-         }else {
+        if let cityname = self.FirstScreenModel?.CityName as? String,let satename =  self.FirstScreenModel?.StateName as? String,let countrycode =  self.FirstScreenModel?.CountryName as? String,let pincode = self.FirstScreenModel?.ZipCode as? String {
+            let myAddress =  cityname + "," + satename + ","  + countrycode + ","  + pincode
+            self.findMyAddressLatAndLong(Address: myAddress)
+        }else {
             self.PublishingEventToLive(lat: self.currentLocLat,Long: self.currentLocLong)
-         }
+        }
     }
     
     func findMyAddressLatAndLong(Address:String){
@@ -88,11 +97,11 @@ class PublishingEventVC: UIViewController {
             }
             if let placemark = placemarks?.first {
                 if let coordinates:CLLocationCoordinate2D = placemark.location?.coordinate{
-                print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
+                    print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
                     self.PublishingEventToLive(lat: "\(coordinates.latitude)", Long: "\(coordinates.longitude)")
-                  }
-               
-             }
+                }
+                
+            }
         })
     }
     
@@ -103,15 +112,15 @@ extension PublishingEventVC :UITableViewDelegate,UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfSections_nodata(in: tableView, ArrayCount: self.MemberModelArr.count, numberOfsections: 1, data_MSG_Str: "No Members were added!")
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.MemberModelArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: publishEventCell = tableView.dequeueReusableCell(withIdentifier: "publishEventCell", for: indexPath) as! publishEventCell
-        cell.UserNameLblref.text = self.MemberModelArr[indexPath.row].membername 
-        cell.UserEmailLblref.text = self.MemberModelArr[indexPath.row].memberEmail 
+        cell.UserNameLblref.text = self.MemberModelArr[indexPath.row].membername
+        cell.UserEmailLblref.text = self.MemberModelArr[indexPath.row].memberEmail
         cell.UserNumberLblref.text = self.MemberModelArr[indexPath.row].memberNumber
         
         
@@ -123,23 +132,23 @@ extension PublishingEventVC :UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     @objc func DeleteEventbtn(sender: UIButton){
-       // if self.MemberModelArr.count < sender.tag {
-            if self.MemberModelArr[sender.tag].memberNumber != "" {
-                self.MemberModelArr.remove(at: sender.tag)
-            }
-       // }
+        // if self.MemberModelArr.count < sender.tag {
+        if self.MemberModelArr[sender.tag].memberNumber != "" {
+            self.MemberModelArr.remove(at: sender.tag)
+        }
+        // }
         
         self.MebersListTblref.reloadData()
     }
     
     @objc func EditEventbtn(sender: UIButton){
         let storyboard = UIStoryboard(name: "DashBoard", bundle: nil)
-       let vc = storyboard.instantiateViewController(withIdentifier: "AddExtraMeberToEventVC")  as! AddExtraMeberToEventVC
-       vc.UpdateExtraMeberdelegate = self
+        let vc = storyboard.instantiateViewController(withIdentifier: "AddExtraMeberToEventVC")  as! AddExtraMeberToEventVC
+        vc.UpdateExtraMeberdelegate = self
         vc.vcFrom = "EditMember"
-       // if self.MemberModelArr.count < sender.tag {
-       
-       // }
+        // if self.MemberModelArr.count < sender.tag {
+        
+        // }
         
         if self.MemberModelArr[sender.tag].memberNumber != "" {
             
@@ -152,7 +161,7 @@ extension PublishingEventVC :UITableViewDelegate,UITableViewDataSource {
         }
         
         self.MebersListTblref.reloadData()
-       self.present(vc, animated: true)
+        self.present(vc, animated: true)
         
         
     }
@@ -181,12 +190,12 @@ extension PublishingEventVC :UpdateExtraMeberToEventDelegate {
     
 }
 extension PublishingEventVC {
-   
+    
     
     //MARK:- login func
     func PublishingEventToLive(lat: String,Long: String){
         //indicator.showActivityIndicator()
-         var UserId = UserDefaults.standard.string(forKey: "userID")  ?? ""
+        var UserId = UserDefaults.standard.string(forKey: "userID")  ?? ""
         var categoryId = ""
         var categoryName = ""
         var categoryIDArr : [String] = []
@@ -199,12 +208,12 @@ extension PublishingEventVC {
         categoryId = categoryIDArr.joined(separator: ",")
         categoryName = categoryNameArr.joined(separator: ",")
         var imageData = Data()
-//        if let img = FirstScreenModel?.EventImage {
-//            if let datastr:Data = img.pngData() {
-//               // Handle operations with data here...
-//                imageData = datastr
-//            }
-//        }
+        //        if let img = FirstScreenModel?.EventImage {
+        //            if let datastr:Data = img.pngData() {
+        //               // Handle operations with data here...
+        //                imageData = datastr
+        //            }
+        //        }
         
         
         var parameters = [
@@ -222,10 +231,10 @@ extension PublishingEventVC {
             "contactinfo":FirstScreenModel?.ContactEmailOrPass,
             //"eventtype":FirstScreenModel?.HostType,
             "event_description":FirstScreenModel?.EventDiscription,
-           // "eventtype":categoryName,
+            // "eventtype":categoryName,
             "country":FirstScreenModel?.CountryName,
-//            "latitude":self.currentLocLat,
-//            "longitude":self.currentLocLong,
+            //            "latitude":self.currentLocLat,
+            //            "longitude":self.currentLocLong,
             "latitude":lat,
             "longitude":Long,
             "category":categoryId,
@@ -233,13 +242,13 @@ extension PublishingEventVC {
             "eventtype":self.AdvertiseStatus,
             "hosttype":self.HostcontactStatus,
             
-//            "allmembers[0][member]":harvinder
-//            "allmembers[0][email]":harvinder@anaad.net
-//            "allmembers[0][number]":7307151068
-//            "allmembers[1][member]":Rajesh
-//            
-//            "allmembers[1][email]":raji@anaad.net
-//            "allmembers[1][number]":8360757603
+            //            "allmembers[0][member]":harvinder
+            //            "allmembers[0][email]":harvinder@anaad.net
+            //            "allmembers[0][number]":7307151068
+            //            "allmembers[1][member]":Rajesh
+            //
+            //            "allmembers[1][email]":raji@anaad.net
+            //            "allmembers[1][number]":8360757603
         ] as! [String: String]
         
         for i in 0..<self.MemberModelArr.count{
@@ -247,12 +256,12 @@ extension PublishingEventVC {
             parameters.updateValue(self.MemberModelArr[i].memberEmail, forKey: "allmembers[\(i)][email]")
             parameters.updateValue(self.MemberModelArr[i].memberNumber, forKey: "allmembers[\(i)][number]")
         }
- 
+        
         NetworkManager2.Apicalling(url: API_URl.CreateNewEvent_URL, paramaters: parameters, ImageData: FirstScreenModel?.EventImage, imagetype: FirstScreenModel?.imagetype ?? "jpg", httpMethodType: .post, success: { (response:UserModel) in
-             if response.status == "1" {
+            if response.status == "1" {
                 indicator.hideActivityIndicator()
-                 self.movetonextvc(id: "finalSuccessEventVC", storyBordid: "DashBoard")
-             }else {
+                self.movetonextvc(id: "finalSuccessEventVC", storyBordid: "DashBoard")
+            }else {
                 indicator.hideActivityIndicator()
                 self.ShowAlert(message: response.message ?? "Something went wrong...")
             }
@@ -268,10 +277,10 @@ extension PublishingEventVC {
 extension PublishingEventVC : CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations[0] as? CLLocation{
- 
+            
             self.currentLocLat = "\(location.coordinate.latitude)"
             self.currentLocLong = "\(location.coordinate.longitude)"
         }
-
+        
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ContactsUI
 
 class CreateNewGroupVC: UIViewController {
     @IBOutlet weak var headerVewref: UIView!
@@ -31,7 +32,14 @@ class CreateNewGroupVC: UIViewController {
      }
     
     @IBAction func choosememberFromContactsList(_ sender: Any){
+        self.memberPhoneTfref.text = ""
+        self.memberNameTFref.text = ""
+        self.memberEmailTFref.text = ""
         
+        let contacVC = CNContactPickerViewController()
+        contacVC.delegate = self
+        self.present(contacVC, animated: true, completion: nil)
+
     }
     
     @IBAction func createNewGroupBntref(_sender: Any){
@@ -51,10 +59,13 @@ class CreateNewGroupVC: UIViewController {
 
 extension CreateNewGroupVC{
     func CreateGroupValidation()-> ApiCheckValidation {
-        if groupNameTfref.text ?? "" == "" || groupDiscriptionTFref.text ?? "" == "" || memberNameTFref.text ?? "" == "" || memberPhoneTfref.text ?? "" == "" || memberEmailTFref.text ?? "" == ""{
+        if groupNameTfref.text ?? "" == "" || groupDiscriptionTFref.text ?? "" == "" || (memberNameTFref.text ?? "" == "" && memberPhoneTfref.text ?? "" == "") || (memberNameTFref.text ?? "" == "" && memberEmailTFref.text ?? "" == "") {
             return ApiCheckValidation.Error("All feilds are required...")
-        }else if let Emailstr = memberEmailTFref.text,!isValidEmail(Emailstr) {
-            return ApiCheckValidation.Error("Please enter Valid Email...")
+        }else if memberEmailTFref.text ?? "" != "" {
+            if let Emailstr = memberEmailTFref.text,!isValidEmail(Emailstr) {
+                return ApiCheckValidation.Error("Please enter Valid Email...")
+            }
+            return ApiCheckValidation.Success
         }else {
             return ApiCheckValidation.Success
         }
@@ -153,4 +164,128 @@ extension CreateNewGroupVC {
             }
         }
     }
+}
+extension CreateNewGroupVC: CNContactPickerDelegate {
+
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        let emailNumberCount = contact.emailAddresses.count
+        let phoneNumberCount = contact.phoneNumbers.count
+        let name: String? = CNContactFormatter.string(from: contact, style: .fullName)
+        self.memberNameTFref.text = name
+        
+        
+//        //MARK:-   Email 
+//        //@JA - They have to have at least 1 email address
+//        guard emailNumberCount > 0 else {
+//            dismiss(animated: true)
+//            //show pop up: "Selected contact does not have a number"
+//            let alertController = UIAlertController(title: "No emails found for contact: "+contact.givenName+" "+contact.familyName, message: nil, preferredStyle: .alert)
+//            let cancelAction = UIAlertAction(title: "Ok", style: .default, handler: {
+//            alert -> Void in
+//
+//            })
+//            alertController.addAction(cancelAction)
+//            self.present(alertController, animated: true, completion: nil)
+//            return
+//        }
+//
+//        //@JA - If they have only 1 email it's easy.  If there is many emails we want to concatenate them and separate by commas , , ...
+//        if emailNumberCount == 1 {
+//            setEmailFromContact(contactEmail: contact.emailAddresses[0].value as String)
+//        } else {
+//            let alertController = UIAlertController(title: "Select an email from contact: "+contact.givenName+" "+contact.familyName+" or select 'All' to send to every email listed.", message: nil, preferredStyle: .alert)
+//
+//            for i in 0...emailNumberCount-1 {
+//                let emailAction = UIAlertAction(title: contact.emailAddresses[i].value as String, style: .default, handler: {
+//                alert -> Void in
+//                    self.setEmailFromContact(contactEmail: contact.emailAddresses[i].value as String)
+//                })
+//                alertController.addAction(emailAction)
+//            }
+//
+//            let allAction = UIAlertAction(title: "All", style: .destructive, handler: {
+//            alert -> Void in
+//                var emailConcat = ""
+//                for i in 0...emailNumberCount-1{
+//                    if(i != emailNumberCount-1){ //@JA - Only add the , if we are not on the last item of the array
+//                        emailConcat = emailConcat + (contact.emailAddresses[i].value as String)+","
+//                    }else{
+//                        emailConcat = emailConcat + (contact.emailAddresses[i].value as String)
+//                    }
+//                }
+//                self.setEmailFromContact(contactEmail: emailConcat)//@JA - Sends the concatenated version of the emails separated by commas
+//            })
+//            alertController.addAction(allAction)
+//
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+//            alert -> Void in
+//
+//            })
+//            alertController.addAction(cancelAction)
+//
+//            dismiss(animated: true)
+//            self.present(alertController, animated: true, completion: nil)
+//        }
+        
+        //MARK:-  Phone Number 
+        
+        guard phoneNumberCount > 0 else {
+            dismiss(animated: true)
+            //show pop up: "Selected contact does not have a number"
+            return
+        }
+
+        if phoneNumberCount == 1 {
+            setNumberFromContact(contactNumber: contact.phoneNumbers[0].value.stringValue)
+
+        } else {
+            let alertController = UIAlertController(title: "Select one of the numbers", message: nil, preferredStyle: .alert)
+
+            for i in 0...phoneNumberCount-1 {
+                let phoneAction = UIAlertAction(title: contact.phoneNumbers[i].value.stringValue, style: .default, handler: {
+                alert -> Void in
+                    self.setNumberFromContact(contactNumber: contact.phoneNumbers[i].value.stringValue)
+                })
+                alertController.addAction(phoneAction)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: {
+            alert -> Void in
+
+            })
+            alertController.addAction(cancelAction)
+
+            dismiss(animated: true)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+    func setEmailFromContact(contactEmail: String){
+        self.memberEmailTFref.text = contactEmail
+    }
+
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        print("contact picker canceled")
+    }
+    
+ 
+
+    func setNumberFromContact(contactNumber: String) {
+
+        //UPDATE YOUR NUMBER SELECTION LOGIC AND PERFORM ACTION WITH THE SELECTED NUMBER
+
+        var contactNumber = contactNumber.replacingOccurrences(of: "-", with: "")
+        contactNumber = contactNumber.replacingOccurrences(of: "(", with: "")
+        contactNumber = contactNumber.replacingOccurrences(of: ")", with: "")
+        contactNumber = contactNumber.trimmingCharacters(in: CharacterSet.whitespaces)
+        guard contactNumber.count >= 10 else {
+            dismiss(animated: true) {
+                self.ShowAlert(message: "Selected contact does not have a valid number")
+            }
+            return
+        }
+        self.memberPhoneTfref.text = String(contactNumber.suffix(10))
+
+    }
+
+   
 }

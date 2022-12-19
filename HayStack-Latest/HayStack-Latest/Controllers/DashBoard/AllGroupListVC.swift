@@ -24,6 +24,7 @@ class NewGroupsListCell: UITableViewCell {
 
 class AllGroupListVC: UIViewController {
     
+    @IBOutlet weak var backBtnref: UIButton!
     @IBOutlet weak var headerVewref: UIView!
 
     @IBOutlet weak var NewGroupListtblref: UITableView!
@@ -31,7 +32,7 @@ class AllGroupListVC: UIViewController {
     @IBOutlet weak var addNewGroupsmallBtnref: UIButton!
     var grouplistModel : [GroupsListModel_data] = []
     var vcFrom = ""
-    
+    var isPresenter = false
    //for create event
     var AdvertiseStatus = ""
     var HostcontactStatus = ""
@@ -50,6 +51,8 @@ class AllGroupListVC: UIViewController {
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 //            self.NewGroupListtblref.isHidden = false
 //        }
+        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +64,17 @@ class AllGroupListVC: UIViewController {
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 //            self.NewGroupListtblref.isHidden = false
 //        }
+        
+        backBtnref.isHidden = vcFrom == "CreateEvent_AddMember" ? false : true
+        if vcFrom == "CreateEvent_AddExtraMember" && isPresenter {
+            backBtnref.isHidden = isPresenter == true ? false : true
+        }
+        
+        self.tabBarController?.tabBar.isHidden = vcFrom == "CreateEvent_AddExtraMember" ? true : false
+        
+        self.tabBarController?.tabBar.isHidden = vcFrom == "CreateEvent_AddMember" ? true : false
+
+        
     }
     
     @IBAction func AddNewGroupBtnref(_ sender: Any) {
@@ -68,6 +82,13 @@ class AllGroupListVC: UIViewController {
     }
     
 
+    @IBAction func backBtnref(_ sender: Any) {
+        if isPresenter {
+            self.dismiss()
+        } else {
+        self.popToBackVC()
+        }
+    }
 }
 extension AllGroupListVC : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -160,9 +181,14 @@ extension AllGroupListVC : UITableViewDelegate,UITableViewDataSource {
         }
         nxtVC.groupid = self.grouplistModel[indexPath.row].id ?? ""
         nxtVC.GroupName = self.grouplistModel[indexPath.row].gname ?? ""
-        self.navigationController?.pushViewController(nxtVC, animated: true)
+        if isPresenter {
+            nxtVC.isPresenter = true
+            self.present(nxtVC, animated: true)
+        } else {
+            self.navigationController?.pushViewController(nxtVC, animated: true)
+        }
         
-    }
+     }
     
     
     @objc func EditNewGroup(sender: UIButton){
@@ -285,6 +311,8 @@ func AllGroupList(){
                 self.NewGroupListtblref.isHidden = true
                 self.addNewGroupsmallBtnref.isHidden = true
             }
+            
+            self.addNewGroupsmallBtnref.isHidden = self.isPresenter == true ? true : false
          }else {
             indicator.hideActivityIndicator()
             self.ShowAlert(message: response.message ?? "Something went wrong...")
