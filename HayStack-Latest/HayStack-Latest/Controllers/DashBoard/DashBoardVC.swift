@@ -41,6 +41,9 @@ class DashBoardVC: UIViewController {
     var locality = ""
     var administrativeArea = ""
     var country = ""
+    var CurrentDatestr = ""
+
+    var CurrentTimeStr = ""
     
     var defaultLocation = CLLocation(latitude: 42.361145, longitude: -71.057083)
 
@@ -54,6 +57,7 @@ class DashBoardVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentTimeforApi()
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.delegate = self
         //myadressselected = false
@@ -61,7 +65,7 @@ class DashBoardVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.currentTimeforApi()
         self.tabBarController?.tabBar.isHidden = false
         self.navigationController?.navigationBar.isHidden = true
         manager.delegate = self
@@ -109,6 +113,17 @@ class DashBoardVC: UIViewController {
        // myadressselected = false
 
      }
+    
+    func currentTimeforApi() {
+       let formatter2 = DateFormatter()
+       formatter2.dateFormat = "MM-dd-yyyy"
+       self.CurrentDatestr = formatter2.string(from: Date())
+ 
+       let formatter3 = DateFormatter()
+        formatter3.dateFormat = "hh:mm a"
+        self.CurrentTimeStr = formatter3.string(from: Date())
+     }
+
 
 
   
@@ -304,15 +319,15 @@ extension DashBoardVC : UICollectionViewDelegate,UICollectionViewDataSource,UICo
     func MyPopularEventsMehtod(){
          indicator.showActivityIndicator()
          var UserId = UserDefaults.standard.string(forKey: "userID")  ?? ""
- 
+         self.currentTimeforApi()
          let parameters = [
             "id":UserId,
             "latitude":"\(defaultLocation.coordinate.latitude)",
             "longitude":"\(defaultLocation.coordinate.longitude)",
             "category":"",
             "searchtype":"",
-            "currentdate":"",
-            "endtime":"",
+            "currentdate":self.CurrentDatestr,
+            "endtime":self.CurrentTimeStr,
             "device_type":"IOS",
             "device_id":UIDevice.current.identifierForVendor!.uuidString,
             "device_token":newDeviceId

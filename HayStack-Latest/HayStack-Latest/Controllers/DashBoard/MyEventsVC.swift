@@ -91,6 +91,7 @@ class MyEventsVC: UIViewController {
         self.IntrestLblref.isHidden = true
         self.Myeventslblref.isHidden = false
         self.MyEventsArr?.removeAll()
+        self.Eventstblref.reloadData()
         self.selectedBtnName = "My Events"
         self.Eventstblref.reloadWithAnimation()
         //Api calling...
@@ -103,6 +104,7 @@ class MyEventsVC: UIViewController {
         self.IntrestLblref.isHidden = true
         self.Myeventslblref.isHidden = true
         self.MyEventsArr?.removeAll()
+        self.Eventstblref.reloadData()
         self.Eventstblref.reloadWithAnimation()
         self.selectedBtnName = "Invited"
         //Api calling...
@@ -115,6 +117,7 @@ class MyEventsVC: UIViewController {
         self.IntrestLblref.isHidden = false
         self.Myeventslblref.isHidden = true
         self.MyEventsArr?.removeAll()
+        self.Eventstblref.reloadData()
         self.selectedBtnName = "Interest"
         self.Eventstblref.reloadWithAnimation()
         //Api calling...
@@ -127,6 +130,7 @@ class MyEventsVC: UIViewController {
         self.IntrestLblref.isHidden = true
         self.Myeventslblref.isHidden = true
         self.MyEventsArr?.removeAll()
+        self.Eventstblref.reloadData()
         self.selectedBtnName = "Attend"
         
         self.Eventstblref.reloadWithAnimation()
@@ -294,13 +298,30 @@ extension MyEventsVC {
 
             }else {
                 indicator.hideActivityIndicator()
-                self.ShowAlert(message: response.message ?? "Something went wrong...")
+                self.AttendLblref.isHidden = true
+                self.InvitedLblref.isHidden = true
+                self.IntrestLblref.isHidden = true
+                self.Myeventslblref.isHidden = false
+                self.MyEventsArr?.removeAll()
+                self.Eventstblref.reloadData()
+                self.selectedBtnName = "My Events"
+                self.Eventstblref.reloadWithAnimation()
+                self.ShowAlert(message: response.message ?? "No record found.")
+                
             }
         }) { (errorMsg) in
             
             indicator.hideActivityIndicator()
             if let err = errorMsg as? String{
                 self.ShowAlert(message: err)
+                self.AttendLblref.isHidden = true
+                self.InvitedLblref.isHidden = true
+                self.IntrestLblref.isHidden = true
+                self.Myeventslblref.isHidden = false
+                self.MyEventsArr?.removeAll()
+                self.Eventstblref.reloadData()
+                self.selectedBtnName = "My Events"
+                self.Eventstblref.reloadWithAnimation()
             }
         }
     }
@@ -330,13 +351,30 @@ extension MyEventsVC {
 
             }else {
                 indicator.hideActivityIndicator()
-                self.ShowAlert(message: response.message ?? "Something went wrong...")
+                self.AttendLblref.isHidden = true
+                self.InvitedLblref.isHidden = true
+                self.IntrestLblref.isHidden = false
+                self.Myeventslblref.isHidden = true
+                self.MyEventsArr?.removeAll()
+                self.Eventstblref.reloadData()
+                self.selectedBtnName = "Interest"
+                self.Eventstblref.reloadWithAnimation()
+                self.ShowAlert(message: response.message ?? "No record found.")
             }
         }) { (errorMsg) in
             
             indicator.hideActivityIndicator()
             if let err = errorMsg as? String{
                 self.ShowAlert(message: err)
+                self.AttendLblref.isHidden = true
+                self.InvitedLblref.isHidden = true
+                self.IntrestLblref.isHidden = false
+                self.Myeventslblref.isHidden = true
+                self.MyEventsArr?.removeAll()
+                self.Eventstblref.reloadData()
+                self.selectedBtnName = "Interest"
+                self.Eventstblref.reloadWithAnimation()
+                
             }
         }
     }
@@ -365,13 +403,31 @@ extension MyEventsVC {
 
             }else {
                 indicator.hideActivityIndicator()
-                self.ShowAlert(message: response.message ?? "Something went wrong...")
+                self.AttendLblref.isHidden = false
+                self.InvitedLblref.isHidden = true
+                self.IntrestLblref.isHidden = true
+                self.Myeventslblref.isHidden = true
+                self.MyEventsArr?.removeAll()
+                self.Eventstblref.reloadData()
+                self.selectedBtnName = "Attend"
+                
+                self.Eventstblref.reloadWithAnimation()
+                self.ShowAlert(message: response.message ?? "No record found.")
             }
         }) { (errorMsg) in
             
             indicator.hideActivityIndicator()
             if let err = errorMsg as? String{
                 self.ShowAlert(message: err)
+                self.AttendLblref.isHidden = false
+                self.InvitedLblref.isHidden = true
+                self.IntrestLblref.isHidden = true
+                self.Myeventslblref.isHidden = true
+                self.MyEventsArr?.removeAll()
+                self.Eventstblref.reloadData()
+                self.selectedBtnName = "Attend"
+                
+                self.Eventstblref.reloadWithAnimation()
             }
         }
     }
@@ -398,13 +454,30 @@ extension MyEventsVC {
  
             }else {
                 indicator.hideActivityIndicator()
-                self.ShowAlert(message: "Something went wrong...")
+                 self.AttendLblref.isHidden = true
+                self.InvitedLblref.isHidden = false
+                self.IntrestLblref.isHidden = true
+                self.Myeventslblref.isHidden = true
+                self.MyEventsArr?.removeAll()
+                self.Eventstblref.reloadData()
+                self.Eventstblref.reloadWithAnimation()
+                self.selectedBtnName = "Invited"
+
+                self.ShowAlert(message: "No record found.")
             }
         }) { (errorMsg) in
             
             indicator.hideActivityIndicator()
             if let err = errorMsg as? String{
                 self.ShowAlert(message: err)
+                self.AttendLblref.isHidden = true
+               self.InvitedLblref.isHidden = false
+               self.IntrestLblref.isHidden = true
+               self.Myeventslblref.isHidden = true
+               self.MyEventsArr?.removeAll()
+               self.Eventstblref.reloadData()
+               self.Eventstblref.reloadWithAnimation()
+               self.selectedBtnName = "Invited"
             }
         }
     }

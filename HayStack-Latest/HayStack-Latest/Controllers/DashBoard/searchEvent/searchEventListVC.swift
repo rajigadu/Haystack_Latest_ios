@@ -9,7 +9,6 @@ import UIKit
 
 class searchEventCell: UITableViewCell {
     @IBOutlet weak var backViewref: UIView!
-    
     @IBOutlet weak var MyEventNamelblref: UILabel!
     @IBOutlet weak var MyEventHostNamelblref: UILabel!
     @IBOutlet weak var MyEventHostCoantactInfoLblef: UILabel!
@@ -146,9 +145,6 @@ extension searchEventListVC {
             "latitude":currentAddressModel?.latstr ?? "",
             "longitude":currentAddressModel?.longstr ?? "",
             "category":categoryId
-            
-            
-            
          ]
         NetworkManager.Apicalling(url: API_URl.Search_for_Event_URL, paramaters: parameters, httpMethodType: .post, success: { (response:SearchEventModel) in
             print(response.data)

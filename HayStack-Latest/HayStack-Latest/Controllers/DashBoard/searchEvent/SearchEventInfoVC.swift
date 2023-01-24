@@ -41,6 +41,7 @@ class SearchEventInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         self.showEventDetails()
      }
     

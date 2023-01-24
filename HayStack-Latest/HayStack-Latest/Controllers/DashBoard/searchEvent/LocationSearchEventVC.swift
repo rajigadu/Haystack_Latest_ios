@@ -58,10 +58,13 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
     let locationManager = CLLocationManager()
     
     var defaultLocation = CLLocation(latitude: 42.361145, longitude: -71.057083)
+    var defaultLocation2 = CLLocation(latitude: 42.361145, longitude: -71.057083)
+
     var zoomLevel: Float = 15.0
     let marker : GMSMarker = GMSMarker()
-    
-    
+    var isPlaceSearching = false
+    var CurrentDatestr = ""
+    var CurrentTimeStr = ""
     let geocoderstr = GMSGeocoder()
     
     let geocoder = CLGeocoder()
@@ -73,12 +76,15 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
     var DistanceInKM = ""
     var popularEventsArr:[nearByEventsModelData] = []
     var currentAddressModel : AddressStruct?
+    var currentAddressModel2 : AddressStruct?
     var markerPosition : CGPoint!
     
     var IsMenuOpend = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isPlaceSearching = false
+        self.currentTimeforApi()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         googlemapviewref.delegate = self
@@ -122,10 +128,12 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
         self.memuIconBtnref.setImage(#imageLiteral(resourceName: "menuForward"), for: .normal)
         self.EventBackViewref.isHidden = true
         self.menuLeadref.constant = 0
-        
-        
+ 
     }
    
+    override func viewWillAppear(_ animated: Bool) {
+        //isPlaceSearching = false
+    }
     
     @IBAction func MenuIconBntref(_ sender: Any) {
          if IsMenuOpend  {
@@ -150,11 +158,23 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
       }
     
     @IBAction func applyBntref(_ sender: Any) {
-        if self.defaultLocation.coordinate.latitude != nil && defaultLocation.coordinate.latitude > 0.00 && RadiusTfref.text?.count ?? 0 > 0{
+        if self.defaultLocation.coordinate.latitude != nil && defaultLocation.coordinate.latitude > 0.00 && RadiusTfref.text?.count ?? 0 > 0 {
             self.googlemapviewref.clear()
             self.isnationWide = "0"
-            self.MyPopularEventsMehtod(lat: "\(defaultLocation.coordinate.latitude)", Long: "\(defaultLocation.coordinate.longitude)")
-            self.addRadiusCircle(location: defaultLocation,distanceInMile: Int(RadiusTfref.text ?? "0") ?? 0)
+            
+            self.DistanceInKM = self.RadiusTfref.text ?? ""
+            if isPlaceSearching {
+                if self.defaultLocation2.coordinate.latitude != nil && defaultLocation2.coordinate.latitude > 0.00 {
+                    self.addRadiusCircle(location: self.defaultLocation2,distanceInMile: Int(RadiusTfref.text ?? "0") ?? 0)
+                    self.MyPopularEventsMehtod(lat: "\(defaultLocation2.coordinate.latitude)", Long: "\(defaultLocation2.coordinate.longitude)")
+                } else {
+                 self.addRadiusCircle(location: self.defaultLocation,distanceInMile: Int(RadiusTfref.text ?? "0") ?? 0)
+                self.MyPopularEventsMehtod(lat: "\(defaultLocation.coordinate.latitude)", Long: "\(defaultLocation2.coordinate.longitude)")
+                }
+            } else {
+                self.addRadiusCircle(location: self.defaultLocation,distanceInMile: Int(RadiusTfref.text ?? "0") ?? 0)
+                self.MyPopularEventsMehtod(lat: "\(defaultLocation.coordinate.latitude)", Long: "\(defaultLocation.coordinate.longitude)")
+            }
         }else {
             if RadiusTfref.text?.count ?? 0 < 0{
                 // self.showToast(message: "Please enter radious", font: .systemFont(ofSize: 12.0))
@@ -191,7 +211,15 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
         // self.movetonextvc(id: "SearchdateRangeVC", storyBordid: "DashBoard")
         let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
         let nxtVC = Storyboard.instantiateViewController(withIdentifier: "SearchdateRangeVC") as! SearchdateRangeVC
-        nxtVC.currentAddressModel = self.currentAddressModel
+        if isPlaceSearching {
+            if self.defaultLocation2.coordinate.latitude != nil && defaultLocation2.coordinate.latitude > 0.00 {
+                nxtVC.currentAddressModel = self.currentAddressModel2
+            } else {
+                nxtVC.currentAddressModel = self.currentAddressModel
+            }
+        } else {
+            nxtVC.currentAddressModel = self.currentAddressModel
+        }
         nxtVC.searchType = "automatically"
         nxtVC.distance_miles = self.DistanceInKM
         nxtVC.nationwide = self.isnationWide
@@ -211,6 +239,16 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
         self.navigationController?.pushViewController(nxtVC, animated: true)
         
     }
+    
+    func currentTimeforApi() {
+       let formatter2 = DateFormatter()
+       formatter2.dateFormat = "MM-dd-yyyy"
+       self.CurrentDatestr = formatter2.string(from: Date())
+ 
+       let formatter3 = DateFormatter()
+        formatter3.dateFormat = "hh:mm a"
+        self.CurrentTimeStr = formatter3.string(from: Date())
+     }
 }
 // Mark: -CLLocationManagerDelegate
 extension LocationSearchEventVC: CLLocationManagerDelegate,GMSMapViewDelegate {
@@ -411,9 +449,18 @@ extension LocationSearchEventVC: GMSAutocompleteViewControllerDelegate {
         //    marker.map = googlemapviewref
         
         defaultLocation = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        defaultLocation2 = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         
         let mapCamera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 16)
         googlemapviewref.camera = mapCamera
+        
+        marker.position = CLLocationCoordinate2D(latitude: defaultLocation.coordinate.latitude, longitude: defaultLocation.coordinate.longitude)
+        marker.title = UserName
+        //marker.snippet = "USA"
+        
+        marker.icon = UIImage(named: "smallLogo")
+        marker.map = googlemapviewref
+        isPlaceSearching = true
         
         geocoder.reverseGeocodeLocation(CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude), completionHandler:
             {(placemarks, error) in
@@ -443,12 +490,15 @@ extension LocationSearchEventVC: GMSAutocompleteViewControllerDelegate {
                    self.CurrenLocation = addressString
                    self.searchFeildLocTfref.text = addressString
                    self.currentAddressModel = AddressStruct(citystr: pm.thoroughfare ?? "", statestr: pm.locality ?? "", countrystr: pm.country ?? "", pincodestr: pm.postalCode ?? "", latstr: "\(place.coordinate.latitude)", longstr: "\(place.coordinate.longitude)")
+                       self.currentAddressModel2 = AddressStruct(citystr: pm.thoroughfare ?? "", statestr: pm.locality ?? "", countrystr: pm.country ?? "", pincodestr: pm.postalCode ?? "", latstr: "\(place.coordinate.latitude)", longstr: "\(place.coordinate.longitude)")
                     }
                 }
             }
         })
         
         //Api calling...
+        self.defaultLocation = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        place.coordinate
         self.MyPopularEventsMehtod(lat: "\(place.coordinate.latitude)", Long: "\(place.coordinate.longitude)")
         print("Place name: \(place.name)")
         print("Place address: \(place.formattedAddress)")
@@ -473,9 +523,10 @@ extension LocationSearchEventVC {
     func MyPopularEventsMehtod(lat: String,Long: String){
         indicator.showActivityIndicator()
          var UserId = UserDefaults.standard.string(forKey: "userID")  ?? ""
+        self.DistanceInKM = self.RadiusTfref.text ?? ""
         var categoryId = ""
         var categoryName = ""
-        
+        self.currentTimeforApi()
         if self.SearchScreenModelArr.count > 0 {
             var categoryIDArr : [String] = []
             var categoryNameArr : [String] = []
@@ -500,8 +551,8 @@ extension LocationSearchEventVC {
             "long":Long,
             "categorys":categoryId,
             "searchtype":"",
-            "currentdate":"",
-            "endtime":"",
+            "currentdate":self.CurrentDatestr,
+            "endtime":self.CurrentTimeStr,
             "DistanceinMiles":self.DistanceInKM,
             "NationWide":self.isnationWide,
             "device_type":"IOS",
@@ -580,7 +631,7 @@ extension LocationSearchEventVC {
         let circleCenter : CLLocationCoordinate2D  = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
         let circ = GMSCircle(position: circleCenter, radius: Double(distanceInMile) * 1609.34)
         
-        let mapCamera = GMSCameraPosition.camera(withLatitude: circleCenter.latitude, longitude: circleCenter.longitude, zoom: 10)
+        let mapCamera = GMSCameraPosition.camera(withLatitude: circleCenter.latitude, longitude: circleCenter.longitude, zoom: 8)
         googlemapviewref.camera = mapCamera
         
         circ.fillColor = UIColor(red: 0.0, green: 0.7, blue: 0, alpha: 0.1)

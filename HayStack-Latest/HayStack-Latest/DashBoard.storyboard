@@ -283,7 +283,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-4Z-Q6t">
-                                                                                            <rect key="frame" x="290" y="40.5" width="60" height="19.5"/>
+                                                                                            <rect key="frame" x="290" y="41" width="60" height="19"/>
                                                                                             <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
@@ -683,7 +683,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="709"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsn-5c-evD">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1060"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1059"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addEventimg" translatesAutoresizingMaskIntoConstraints="NO" id="MEi-Wf-zey">
                                                         <rect key="frame" x="36" y="36" width="342" height="180"/>
@@ -1006,7 +1006,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lac-Ac-GKV">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="32"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="39" height="32"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
@@ -1041,18 +1041,18 @@
                                                                         <rect key="frame" x="185" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHP-GV-aJu">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="31" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Psq-aD-EDE" customClass="DateField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="161" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="161" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="tFh-mx-Eyp">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="i74-n2-XF6"/>
                                                                                 </constraints>
@@ -1080,18 +1080,18 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j92-pU-WI7">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hi7-99-g7O" customClass="TimeField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="177" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="177" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="Avb-u3-Xjl">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="NZp-WD-eof"/>
                                                                                 </constraints>
@@ -1114,18 +1114,18 @@
                                                                         <rect key="frame" x="185" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="956-Kq-iSN">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="73.5" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="76.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="End Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tjR-HK-ESp" customClass="TimeField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="177" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="177" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="sKg-Vb-lCU">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="BYy-yC-tqi"/>
                                                                                 </constraints>
@@ -1149,13 +1149,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXT-ac-1Ex">
-                                                        <rect key="frame" x="26" y="806" width="141.5" height="22"/>
+                                                        <rect key="frame" x="26" y="806" width="142.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d9q-Sx-1es" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="26" y="844" width="362" height="100"/>
+                                                        <rect key="frame" x="26" y="843" width="362" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="Oyw-0y-1ik"/>
@@ -1174,7 +1174,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LE8-dR-Jhs">
-                                                        <rect key="frame" x="26" y="980" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="979" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="5yG-hJ-fv3"/>
@@ -1394,7 +1394,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="religion &amp; sprituality" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-1w-81u">
-                                                                    <rect key="frame" x="46" y="29" width="284" height="17"/>
+                                                                    <rect key="frame" x="46" y="29.5" width="284" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -4593,7 +4593,7 @@ Going further!</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHg-1f-fIh">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1190"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1189"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addEventimg" translatesAutoresizingMaskIntoConstraints="NO" id="0ys-eh-txv">
                                                         <rect key="frame" x="36" y="36" width="342" height="180"/>
@@ -4867,7 +4867,7 @@ Going further!</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzY-Uq-EfN">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="32"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="39" height="32"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
@@ -4902,18 +4902,18 @@ Going further!</string>
                                                                         <rect key="frame" x="185" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkF-ye-KBk">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="31" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RY6-JK-i86">
-                                                                                <rect key="frame" x="0.0" y="24" width="161" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="161" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-ss-00M">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="fXW-AR-eUT"/>
                                                                                 </constraints>
@@ -4941,18 +4941,18 @@ Going further!</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7e-75-YoQ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7iR-Md-cEc">
-                                                                                <rect key="frame" x="0.0" y="24" width="177" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="177" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="b9s-Jz-izc">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="5mI-xe-QTO"/>
                                                                                 </constraints>
@@ -4975,18 +4975,18 @@ Going further!</string>
                                                                         <rect key="frame" x="185" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qq-Xd-e3c">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="73.5" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="76.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c0w-4v-w4K">
-                                                                                <rect key="frame" x="0.0" y="24" width="177" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="177" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="bCw-XC-46f">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="pyN-K4-S8A"/>
                                                                                 </constraints>
@@ -5010,13 +5010,13 @@ Going further!</string>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFh-0C-CRq">
-                                                        <rect key="frame" x="26" y="806" width="141.5" height="22"/>
+                                                        <rect key="frame" x="26" y="806" width="142.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ZB-Sl-ktN" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="26" y="844" width="362" height="100"/>
+                                                        <rect key="frame" x="26" y="843" width="362" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="xkJ-Dr-aRC"/>
@@ -5035,7 +5035,7 @@ Going further!</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2p-c6-M6v">
-                                                        <rect key="frame" x="26" y="1110" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="1109" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="EWU-rR-n2y"/>
@@ -5054,7 +5054,7 @@ Going further!</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGT-3w-Y7Z">
-                                                        <rect key="frame" x="26" y="1040" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="1039" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="6DZ-F7-qIS"/>
@@ -5073,7 +5073,7 @@ Going further!</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rai-Kc-J09">
-                                                        <rect key="frame" x="26" y="970" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="969" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="Zeb-l6-dzR"/>
@@ -5255,16 +5255,16 @@ Going further!</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="753"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-KJ-Zda">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="472.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="472"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Edit Member Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtT-dc-Z6d">
-                                                        <rect key="frame" x="26" y="16" width="147.5" height="19.5"/>
+                                                        <rect key="frame" x="26" y="16" width="149.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vji-Wd-08k">
-                                                        <rect key="frame" x="26" y="51.5" width="362" height="151"/>
+                                                        <rect key="frame" x="26" y="51" width="362" height="151"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2C-8D-gyU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="362" height="45"/>
@@ -5362,7 +5362,7 @@ Going further!</string>
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rz-sf-6vd">
-                                                        <rect key="frame" x="26" y="382.5" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="382" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="uBR-v2-sSn"/>
@@ -5381,7 +5381,7 @@ Going further!</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq8-Zd-Z5s">
-                                                        <rect key="frame" x="26" y="312.5" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="312" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="Dgb-nL-VmZ"/>
@@ -5400,7 +5400,7 @@ Going further!</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQl-o6-Bsj">
-                                                        <rect key="frame" x="26" y="245" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="244.5" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="IR9-eM-J3A"/>
@@ -5497,7 +5497,7 @@ Going further!</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blz-0c-u4Z">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1060"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1059"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addEventimg" translatesAutoresizingMaskIntoConstraints="NO" id="fEX-cb-8VZ">
                                                         <rect key="frame" x="36" y="36" width="342" height="180"/>
@@ -5820,7 +5820,7 @@ Going further!</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qn-gt-fsH">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="32"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="39" height="32"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
@@ -5855,18 +5855,18 @@ Going further!</string>
                                                                         <rect key="frame" x="185" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoO-2S-naF">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="31" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RQ9-qz-pB2" customClass="DateField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="161" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="161" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="urf-7H-1uj">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="C52-aN-fQa"/>
                                                                                 </constraints>
@@ -5894,18 +5894,18 @@ Going further!</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOP-yW-GXd">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-aJ-ZhX" customClass="TimeField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="177" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="177" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="KBy-F6-8g1">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="jBc-qi-pWm"/>
                                                                                 </constraints>
@@ -5928,18 +5928,18 @@ Going further!</string>
                                                                         <rect key="frame" x="185" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czZ-fR-r1L">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="73.5" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="76.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SrH-vo-QY2" customClass="TimeField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="177" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="177" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="xJI-Qn-M7W">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="ufP-Yw-EIj"/>
                                                                                 </constraints>
@@ -5963,13 +5963,13 @@ Going further!</string>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNx-hi-lmX">
-                                                        <rect key="frame" x="26" y="806" width="141.5" height="22"/>
+                                                        <rect key="frame" x="26" y="806" width="142.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="esH-S7-a4w" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="26" y="844" width="362" height="100"/>
+                                                        <rect key="frame" x="26" y="843" width="362" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="7ie-Ux-5tW"/>
@@ -5988,7 +5988,7 @@ Going further!</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g8F-rn-CMz">
-                                                        <rect key="frame" x="26" y="980" width="362" height="44"/>
+                                                        <rect key="frame" x="26" y="979" width="362" height="44"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="nQp-nk-DgD"/>
@@ -6138,7 +6138,7 @@ Going further!</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebH-YM-pgO">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1016"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1015"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addEventimg" translatesAutoresizingMaskIntoConstraints="NO" id="nzi-c1-St9">
                                                         <rect key="frame" x="36" y="36" width="342" height="180"/>
@@ -6455,7 +6455,7 @@ Going further!</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJO-1E-U5F">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="32"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="39" height="32"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
@@ -6490,18 +6490,18 @@ Going further!</string>
                                                                         <rect key="frame" x="185" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqo-ji-mSX">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="31" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWa-xH-mpH" customClass="DateField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="161" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="161" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="q1B-jw-UXE">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="thQ-16-ytJ"/>
                                                                                 </constraints>
@@ -6529,18 +6529,18 @@ Going further!</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckw-Ef-VzM">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="82.5" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QyQ-xf-2LA" customClass="TimeField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="177" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="177" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="6Cu-iw-yi4">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="74J-dq-hjD"/>
                                                                                 </constraints>
@@ -6563,18 +6563,18 @@ Going further!</string>
                                                                         <rect key="frame" x="185" y="0.0" width="177" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZf-fx-H5a">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="73.5" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="76.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Start Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Qx-0E-EgR" customClass="TimeField" customModule="HayStack_Latest" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="24" width="177" height="34"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="177" height="35"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits"/>
                                                                             </textField>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dropDownBtn" translatesAutoresizingMaskIntoConstraints="NO" id="Oo2-yj-Ind">
-                                                                                <rect key="frame" x="148" y="29" width="24" height="24"/>
+                                                                                <rect key="frame" x="148" y="28.5" width="24" height="24"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="24" id="fih-KZ-cbf"/>
                                                                                 </constraints>
@@ -6598,13 +6598,13 @@ Going further!</string>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lxk-je-IvE">
-                                                        <rect key="frame" x="26" y="806" width="141.5" height="22"/>
+                                                        <rect key="frame" x="26" y="806" width="142.5" height="21"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="67Z-DQ-A2w" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="26" y="844" width="362" height="100"/>
+                                                        <rect key="frame" x="26" y="843" width="362" height="100"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="YgH-Pa-6pG"/>
@@ -6623,7 +6623,7 @@ Going further!</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAd-ma-g1U">
-                                                        <rect key="frame" x="26" y="980" width="362" height="0.0"/>
+                                                        <rect key="frame" x="26" y="979" width="362" height="0.0"/>
                                                         <color key="backgroundColor" name="#F6921C"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" id="j7G-9f-nY5"/>
