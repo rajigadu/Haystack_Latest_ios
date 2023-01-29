@@ -132,6 +132,7 @@ extension searchEventListVC {
          parameters = [
             "id":UserId,
             "searchType":searchType,
+            "address":currentAddressModel?.addressstr ?? "",
             "country":currentAddressModel?.countrystr ?? "",
             "state":currentAddressModel?.statestr ?? "",
             "zip":currentAddressModel?.pincodestr ?? "",

@@ -38,7 +38,6 @@ class SearchdateRangeVC: UIViewController {
         formatter2.dateFormat = "MM-dd-yyyy"
         self.StartDateTfref.text = formatter2.string(from: Date())
         self.EndDatetfref.text = formatter2.string(from: Date())
-
         
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm a"

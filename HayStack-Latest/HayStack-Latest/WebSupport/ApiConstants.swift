@@ -58,7 +58,8 @@ extension API_URl  {
     
     static let UpdateEvent_URL = API_URl.BaseUrl + "editevent.php"
     
-    static let Search_for_Event_URL = API_URl.BaseUrl + "search-events_new.php"
+    static let Search_for_Event_URL = API_URl.BaseUrl + "search-test.php   "
+    //"search-events_new.php"
     
     static let NearByEventsURL = API_URl.BaseUrl + "near-events.php"
     static let DeleteAccountURL = API_URl.BaseUrl + "delete-account.php"

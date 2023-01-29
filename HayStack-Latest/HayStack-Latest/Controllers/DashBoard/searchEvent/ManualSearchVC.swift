@@ -21,6 +21,7 @@ class ManualSearchVC: UIViewController ,UITextFieldDelegate{
     @IBOutlet weak var cityTfref: UITextField!
     @IBOutlet weak var stateTFref: UITextField!
     @IBOutlet weak var zipCodeTFref: UITextField!
+    @IBOutlet weak var addressTFref: UITextField!
     @IBOutlet weak var countrynameTfref: UITextField!
     @IBOutlet weak var StateBntref: UIButton!
     var Countrypickerview = UIPickerView()
@@ -100,17 +101,21 @@ class ManualSearchVC: UIViewController ,UITextFieldDelegate{
     @IBAction func ContinueBtnref(_ sender: Any) {
         //  self.movetonextvc(id: "LocationSearchEventVC", storyBordid: "DashBoard")
         var address_str = ""
-        if  let cityName =  self.cityTfref.text as? String  {
-            address_str += cityName
-        }
         if let zipCode =  self.zipCodeTFref.text as? String  {
-            address_str += zipCode
+            address_str += zipCode + ","
         }
+        if let Address = self.addressTFref.text as? String {
+            address_str += Address + ","
+        }
+        if  let cityName =  self.cityTfref.text as? String  {
+            address_str += cityName + ","
+        }
+        
         if let statename =  self.stateTFref.text as? String  {
-            address_str += statename
+            address_str += statename + ","
         }
         if let countryname =  self.countrynameTfref.text as? String  {
-            address_str += countryname
+            address_str += countryname + ","
         }
          switch self.ManualSearchValidation() {
         case .Success:
@@ -139,18 +144,18 @@ extension ManualSearchVC{
     }
     
     func mydressFinder(Address: String) {
-        guard let cityName =  self.cityTfref.text as? String else {
-            return
-        }
+//        guard let cityName =  self.cityTfref.text as? String else {
+//            return
+//        }
         guard let statename =  self.stateTFref.text as? String else {
             return
         }
         guard let countryname =  self.countrynameTfref.text as? String else {
             return
         }
-        guard let zipCode =  self.zipCodeTFref.text as? String else {
-            return
-        }
+//        guard let zipCode =  self.zipCodeTFref.text as? String else {
+//            return
+//        }
          var mylatlongstr :addresslatlong?
         geocoder.geocodeAddressString(Address, completionHandler: {(placemarks, error) -> Void in
             if((error) != nil){
@@ -158,7 +163,7 @@ extension ManualSearchVC{
                 
                 let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
                 let nxtVC = Storyboard.instantiateViewController(withIdentifier: "SearchdateRangeVC") as! SearchdateRangeVC
-                nxtVC.currentAddressModel = AddressStruct(citystr: cityName, statestr: statename, countrystr: countryname,pincodestr: zipCode,latstr: " ", longstr: " ")
+                nxtVC.currentAddressModel = AddressStruct(citystr: self.cityTfref.text ?? "", statestr: statename, countrystr: countryname,pincodestr: self.zipCodeTFref.text ?? "",addressstr: self.addressTFref.text ?? "", latstr: " ", longstr: " ")
                 nxtVC.searchType = "manual"
                 nxtVC.distance_miles = self.distance_miles
                 nxtVC.nationwide = self.isnationWide
@@ -176,7 +181,7 @@ extension ManualSearchVC{
                     
                     let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
                     let nxtVC = Storyboard.instantiateViewController(withIdentifier: "SearchdateRangeVC") as! SearchdateRangeVC
-                    nxtVC.currentAddressModel = AddressStruct(citystr: cityName, statestr: statename, countrystr: countryname,pincodestr: zipCode,latstr: "\(coordinates.latitude)", longstr: "\(coordinates.longitude)")
+                    nxtVC.currentAddressModel = AddressStruct(citystr: self.cityTfref.text ?? "", statestr: statename, countrystr: countryname,pincodestr: self.zipCodeTFref.text ?? "",addressstr: self.addressTFref.text ?? "",latstr: "\(coordinates.latitude)", longstr: "\(coordinates.longitude)")
                     nxtVC.searchType = "manual"
                     nxtVC.distance_miles = self.distance_miles
                     nxtVC.nationwide = self.isnationWide
@@ -221,10 +226,12 @@ extension ManualSearchVC :UIPickerViewDataSource,UIPickerViewDelegate {
             self.stateTFref.text = ""
             self.cityTfref.text = ""
             self.zipCodeTFref.text = ""
+            self.addressTFref.text = ""
             self.countrynameTfref.text =  CountryModel[row].name
         }else {
             self.cityTfref.text = ""
             self.zipCodeTFref.text = ""
+            self.addressTFref.text = ""
             self.stateTFref.text = StateModel[row].name
         }
      }
