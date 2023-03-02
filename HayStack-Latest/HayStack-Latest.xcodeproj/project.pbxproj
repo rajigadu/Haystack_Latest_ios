@@ -10,6 +10,7 @@
 		4E2024DAC25FEC4FFF26CAC1 /* Pods_HayStack_Latest_HayStack_LatestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5EE900DDECC52154C5AF04E /* Pods_HayStack_Latest_HayStack_LatestUITests.framework */; };
 		6296DC069EF456FD0427B3CF /* Pods_HayStack_Latest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9056EF80EF72A3B810C32AB9 /* Pods_HayStack_Latest.framework */; };
 		AF7779F96EC288BB4520AFAD /* Pods_HayStack_LatestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81897D1D2D40B50D492AA137 /* Pods_HayStack_LatestTests.framework */; };
+		BA3BF21F29AF8BC2008E750F /* LocationSearchManuallyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3BF21E29AF8BC2008E750F /* LocationSearchManuallyVC.swift */; };
 		BA8056CC294B5DC20028AD9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA8056CB294B5DC20028AD9B /* GoogleService-Info.plist */; };
 		BA9B432B294B5819000DE5AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B432A294B5819000DE5AC /* AppDelegate.swift */; };
 		BA9B4335294B5819000DE5AC /* HayStack_Latest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA9B4333294B5819000DE5AC /* HayStack_Latest.xcdatamodeld */; };
@@ -81,6 +82,7 @@
 		BA9B43F9294B5B97000DE5AC /* SupportBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9B43F6294B5B93000DE5AC /* SupportBoard.storyboard */; };
 		BA9B43FA294B5B97000DE5AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9B43F7294B5B95000DE5AC /* Main.storyboard */; };
 		BA9B43FB294B5B97000DE5AC /* DashBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA9B43F8294B5B97000DE5AC /* DashBoard.storyboard */; };
+		BAD33DA629B02D5A0018B704 /* LocationSearchManuallyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD33DA529B02D5A0018B704 /* LocationSearchManuallyObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,7 @@
 		69AC6CE5AA4A8F7852F17990 /* Pods-HayStack-Latest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-Latest.debug.xcconfig"; path = "Target Support Files/Pods-HayStack-Latest/Pods-HayStack-Latest.debug.xcconfig"; sourceTree = "<group>"; };
 		81897D1D2D40B50D492AA137 /* Pods_HayStack_LatestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HayStack_LatestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9056EF80EF72A3B810C32AB9 /* Pods_HayStack_Latest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HayStack_Latest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA3BF21E29AF8BC2008E750F /* LocationSearchManuallyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchManuallyVC.swift; sourceTree = "<group>"; };
 		BA8056CB294B5DC20028AD9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA9B4327294B5819000DE5AC /* HayStack-Latest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HayStack-Latest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA9B432A294B5819000DE5AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 		BA9B43F6294B5B93000DE5AC /* SupportBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SupportBoard.storyboard; sourceTree = "<group>"; };
 		BA9B43F7294B5B95000DE5AC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BA9B43F8294B5B97000DE5AC /* DashBoard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashBoard.storyboard; sourceTree = "<group>"; };
+		BAD33DA529B02D5A0018B704 /* LocationSearchManuallyObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchManuallyObject.swift; sourceTree = "<group>"; };
 		BAF74EE5D73E68AB1AA10ED2 /* Pods-HayStack-Latest-HayStack-LatestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-Latest-HayStack-LatestUITests.release.xcconfig"; path = "Target Support Files/Pods-HayStack-Latest-HayStack-LatestUITests/Pods-HayStack-Latest-HayStack-LatestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E0C5920145ECE3C6814F7BA5 /* Pods-HayStack-LatestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HayStack-LatestTests.debug.xcconfig"; path = "Target Support Files/Pods-HayStack-LatestTests/Pods-HayStack-LatestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E5EE900DDECC52154C5AF04E /* Pods_HayStack_Latest_HayStack_LatestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HayStack_Latest_HayStack_LatestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -425,6 +429,7 @@
 				BA9B439A294B5B64000DE5AC /* SearchdateRangeVC.swift */,
 				BA9B439B294B5B64000DE5AC /* SearchEventInfoVC.swift */,
 				BA9B439C294B5B64000DE5AC /* LocationSearchEventVC.swift */,
+				BAD33DA729B02D620018B704 /* LocationManualSearch */,
 			);
 			path = searchEvent;
 			sourceTree = "<group>";
@@ -465,6 +470,15 @@
 				BA9B43C1294B5B68000DE5AC /* Device.swift */,
 			);
 			path = CodeSupportes;
+			sourceTree = "<group>";
+		};
+		BAD33DA729B02D620018B704 /* LocationManualSearch */ = {
+			isa = PBXGroup;
+			children = (
+				BA3BF21E29AF8BC2008E750F /* LocationSearchManuallyVC.swift */,
+				BAD33DA529B02D5A0018B704 /* LocationSearchManuallyObject.swift */,
+			);
+			path = LocationManualSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -792,6 +806,7 @@
 				BA9B43EB294B5B68000DE5AC /* DashBoardVC.swift in Sources */,
 				BA9B43CC294B5B68000DE5AC /* ContactUSVC.swift in Sources */,
 				BA9B43C3294B5B68000DE5AC /* LoginVC.swift in Sources */,
+				BAD33DA629B02D5A0018B704 /* LocationSearchManuallyObject.swift in Sources */,
 				BA9B43D4294B5B68000DE5AC /* SearchEventInfoVC.swift in Sources */,
 				BA9B43EE294B5B68000DE5AC /* groupsModel.swift in Sources */,
 				BA9B43F1294B5B68000DE5AC /* MyEventsModel.swift in Sources */,
@@ -804,6 +819,7 @@
 				BA9B43D9294B5B68000DE5AC /* MyProfileVC.swift in Sources */,
 				BA9B43EF294B5B68000DE5AC /* LoginModel.swift in Sources */,
 				BA9B43E6294B5B68000DE5AC /* AddNewEventVC.swift in Sources */,
+				BA3BF21F29AF8BC2008E750F /* LocationSearchManuallyVC.swift in Sources */,
 				BA9B43C6294B5B68000DE5AC /* UserRegistrationVC.swift in Sources */,
 				BA9B432B294B5819000DE5AC /* AppDelegate.swift in Sources */,
 				BA9B43C9294B5B68000DE5AC /* GroupMembersListVC.swift in Sources */,

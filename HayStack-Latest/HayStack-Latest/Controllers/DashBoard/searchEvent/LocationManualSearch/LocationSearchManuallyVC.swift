@@ -1,5 +1,5 @@
 //
-//  CategorySearchEventVC.swift
+//  LocationSearchManuallyVC.swift
 //  HayStack-Army
 //
 //  Created by rajesh gandru on 15/05/21.
@@ -9,37 +9,39 @@ import UIKit
 import GoogleMaps
 import MapKit
 import GooglePlaces
-class searchEventCell2: UITableViewCell {
-    @IBOutlet weak var backViewref: UIView!
-    
-    @IBOutlet weak var MyEventNamelblref: UILabel!
-    @IBOutlet weak var MyEventHostNamelblref: UILabel!
-    @IBOutlet weak var MyEventHostCoantactInfoLblef: UILabel!
-    @IBOutlet weak var EventPeopleCountlblref: UILabel!
-    @IBOutlet weak var firsrMemberBtnref: UIButton!
-    @IBOutlet weak var seconMemberBntref: UIButton!
-    @IBOutlet weak var thirdMemberBtnref: UIButton!
-    @IBOutlet weak var infoBtnref: UIButton!
-}
-struct AddressStruct {
-    var citystr : String
-    var statestr : String
-    var countrystr : String
-    var pincodestr : String
-    var addressstr : String
-    var latstr : String
-    var longstr : String
-}
+//class searchEventCell2: UITableViewCell {
+//    @IBOutlet weak var backViewref: UIView!
+//
+//    @IBOutlet weak var MyEventNamelblref: UILabel!
+//    @IBOutlet weak var MyEventHostNamelblref: UILabel!
+//    @IBOutlet weak var MyEventHostCoantactInfoLblef: UILabel!
+//    @IBOutlet weak var EventPeopleCountlblref: UILabel!
+//    @IBOutlet weak var firsrMemberBtnref: UIButton!
+//    @IBOutlet weak var seconMemberBntref: UIButton!
+//    @IBOutlet weak var thirdMemberBtnref: UIButton!
+//    @IBOutlet weak var infoBtnref: UIButton!
+//}
+//struct AddressStruct {
+//    var citystr : String
+//    var statestr : String
+//    var countrystr : String
+//    var pincodestr : String
+//    var addressstr : String
+//    var latstr : String
+//    var longstr : String
+//}
+//
+//protocol SearchEventScreenDelegate{
+//    func SearchEventScreenData(Data: [CategorySecondModel])
+//}
 
-protocol SearchEventScreenDelegate{
-    func SearchEventScreenData(Data: [CategorySecondModel])
-}
-
-class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
+class LocationSearchManuallyVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var googlemapviewref: GMSMapView!
     @IBOutlet weak var searchFeildLocTfref: UITextField!
     @IBOutlet weak var RadiusTfref: UITextField!
     
+    @IBOutlet weak var ManualSearchView: UIView!
+    @IBOutlet weak var manualSearchViewHeightref: NSLayoutConstraint!
     @IBOutlet weak var nationWideswitchbtnref: UISwitch!
     @IBOutlet weak var NationWideselectionbtnref: UIButton!
     
@@ -53,9 +55,19 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var memuIconBtnref: UIButton!
     @IBOutlet weak var menuLeadref: NSLayoutConstraint!
     
+    //Manual Search
+    @IBOutlet weak var cityTfref: UITextField!
+    @IBOutlet weak var stateTFref: UITextField!
+    @IBOutlet weak var zipCodeTFref: UITextField!
+    @IBOutlet weak var addressTFref: UITextField!
+    @IBOutlet weak var countrynameTfref: UITextField!
+    @IBOutlet weak var StateBntref: UIButton!
+
+    
+    @IBOutlet weak var addManualAddressbtn: UIButton!
     var SearchScreenModelArr: [CategorySecondModel] = []
     var SearchEventDelegate :SearchEventScreenDelegate?
-    
+    var isManualSearchEnable = false
     let locationManager = CLLocationManager()
     
     var defaultLocation = CLLocation(latitude: 42.361145, longitude: -71.057083)
@@ -82,8 +94,26 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
     
     var IsMenuOpend = false
     
+    //Manual Search
+    var Countrypickerview = UIPickerView()
+    var Statepickerview2 = UIPickerView()
+   // var isnationWide = ""
+    var distance_miles = ""
+    var CountryModel : [countryModelData] = []
+    var StateModel : [StateModelData] = []
+    var latstr = ""
+    var longstr = ""
+    //var SearchScreenModelArr: [CategorySecondModel] = []
+   // let geocoder = CLGeocoder()
+    var searchLocation = CLLocation(latitude: 42.361145, longitude: -71.057083)
+    var delegatestr : ManualAddessDelegate?
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addManualAddressbtn.setImage(UIImage(systemName: "arrow.up.square"), for: .normal)
+
         isPlaceSearching = false
         self.currentTimeforApi()
         locationManager.delegate = self
@@ -112,28 +142,61 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
             }
         }
         
-        
-        if CLLocationManager.locationServicesEnabled() {
-            switch (CLLocationManager.authorizationStatus()) {
-            case .notDetermined, .restricted, .denied:
-                print("No access")
-            case .authorizedAlways, .authorizedWhenInUse:
-                print("Access")
+        DispatchQueue.main.async {
+            if CLLocationManager.locationServicesEnabled() {
+                switch (CLLocationManager.authorizationStatus()) {
+                case .notDetermined, .restricted, .denied:
+                    print("No access")
+                case .authorizedAlways, .authorizedWhenInUse:
+                    print("Access")
+                }
+            } else {
+                print("Location services are not enabled")
             }
-        } else {
-            print("Location services are not enabled")
         }
-         
         IsMenuOpend = true
         self.EventbackWeidthref.constant = 0
         self.memuIconBtnref.setImage(#imageLiteral(resourceName: "menuForward"), for: .normal)
         self.EventBackViewref.isHidden = true
         self.menuLeadref.constant = 0
- 
+        
+        //ManualSearch Loading...
+        self.LoadManuallSearchfeilds()
     }
    
     override func viewWillAppear(_ animated: Bool) {
         //isPlaceSearching = false
+    }
+    
+    func LoadManuallSearchfeilds() {
+        //Statepicker
+        countrynameTfref.inputView = Countrypickerview
+        countrynameTfref.textAlignment = .left
+        countrynameTfref.placeholder = "Select Your Country"
+
+        Countrypickerview.delegate = self
+        Countrypickerview.dataSource = self
+        
+        self.countrynameTfref.text = "United States"
+        
+        stateTFref.delegate = self
+       // self.stateTfref.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        
+       
+
+        //Countrypicker
+        stateTFref.inputView = Statepickerview2
+        stateTFref.textAlignment = .left
+        stateTFref.placeholder = "Select Your State"
+        stateTFref.delegate = self
+        Statepickerview2.delegate = self
+        Statepickerview2.dataSource = self
+        
+        
+       
+
+        //Api Calling...
+        self.getCountryListMethos()
     }
     
     @IBAction func MenuIconBntref(_ sender: Any) {
@@ -208,6 +271,17 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
             self.NationWideselectionbtnref.setImage(#imageLiteral(resourceName: "unselectBtn"), for: .normal)
         }
     }
+    
+    @IBAction func AddManualLocationBtnref(_ sender: Any) {
+        self.manualSearchViewEnableAndDisable()
+    }
+    func manualSearchViewEnableAndDisable() {
+        isManualSearchEnable = isManualSearchEnable ? false : true
+        ManualSearchView.isHidden = isManualSearchEnable ? true : false
+        manualSearchViewHeightref.constant = isManualSearchEnable ? 0 : 318
+        self.addManualAddressbtn.setImage(isManualSearchEnable ? UIImage(systemName: "arrow.down.app") : UIImage(systemName: "arrow.up.square"), for: .normal)
+    }
+    
     @IBAction func ContinueBntref(_ sender: Any) {
         // self.movetonextvc(id: "SearchdateRangeVC", storyBordid: "DashBoard")
         let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
@@ -232,12 +306,11 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
     @IBAction func manualSearchBtnref(_ sender: Any) {
         // self.movetonextvc(id: "ManualSearchVC", storyBordid: "DashBoard")
         let Storyboard : UIStoryboard = UIStoryboard(name: "DashBoard", bundle: nil)
-        //let nxtVC = Storyboard.instantiateViewController(withIdentifier: "ManualSearchVC") as! ManualSearchVC
-        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "LocationSearchManuallyVC") as! LocationSearchManuallyVC
-//        nxtVC.delegatestr = self
-//        nxtVC.distance_miles = self.DistanceInKM
-//        nxtVC.isnationWide = self.isnationWide
-//        nxtVC.SearchScreenModelArr = self.SearchScreenModelArr
+        let nxtVC = Storyboard.instantiateViewController(withIdentifier: "ManualSearchVC") as! ManualSearchVC
+        nxtVC.delegatestr = self
+        nxtVC.distance_miles = self.DistanceInKM
+        nxtVC.isnationWide = self.isnationWide
+        nxtVC.SearchScreenModelArr = self.SearchScreenModelArr
         self.navigationController?.pushViewController(nxtVC, animated: true)
         
     }
@@ -253,7 +326,7 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
      }
 }
 // Mark: -CLLocationManagerDelegate
-extension LocationSearchEventVC: CLLocationManagerDelegate,GMSMapViewDelegate {
+extension LocationSearchManuallyVC: CLLocationManagerDelegate,GMSMapViewDelegate {
     
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
@@ -306,7 +379,7 @@ extension LocationSearchEventVC: CLLocationManagerDelegate,GMSMapViewDelegate {
                                                                 }
                                                                 print(addressString)
                                                                 self.CurrenLocation = addressString
-                                                                self.searchFeildLocTfref.text = addressString
+                                                                //self.searchFeildLocTfref.text = addressString
                                                                 self.currentAddressModel = AddressStruct(citystr: pm.thoroughfare ?? "", statestr: pm.locality ?? "", countrystr: pm.country ?? "", pincodestr: pm.postalCode ?? "", addressstr: pm.name ?? "", latstr: "\(self.defaultLocation.coordinate.latitude)", longstr: "\(self.defaultLocation.coordinate.longitude)")
                                                             }
                                                         }
@@ -418,7 +491,7 @@ extension LocationSearchEventVC: CLLocationManagerDelegate,GMSMapViewDelegate {
 }
 
 
-extension LocationSearchEventVC :ManualAddessDelegate {
+extension LocationSearchManuallyVC :ManualAddessDelegate {
     func ManualAddessData(Data: AddressStruct) {
         self.currentAddressModel = Data
         print(self.currentAddressModel)
@@ -426,14 +499,14 @@ extension LocationSearchEventVC :ManualAddessDelegate {
         
     }
 }
-extension LocationSearchEventVC {
+extension LocationSearchManuallyVC {
     @IBAction func onLaunchClicked(sender: UIButton) {
         let acController = GMSAutocompleteViewController()
         acController.delegate = self
         present(acController, animated: true, completion: nil)
     }
 }
-extension LocationSearchEventVC: GMSAutocompleteViewControllerDelegate {
+extension LocationSearchManuallyVC: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
@@ -462,9 +535,8 @@ extension LocationSearchEventVC: GMSAutocompleteViewControllerDelegate {
         
         marker.icon = UIImage(named: "smallLogo")
         marker.map = googlemapviewref
-        
         isPlaceSearching = true
-        var addressString :String = ""
+        
         geocoder.reverseGeocodeLocation(CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude), completionHandler:
             {(placemarks, error) in
             if (error != nil){
@@ -473,7 +545,7 @@ extension LocationSearchEventVC: GMSAutocompleteViewControllerDelegate {
             if let pm = placemarks as? [CLPlacemark] {
                if pm.count > 0 {
                    if let pm = placemarks?[0] {
-                     
+                     var addressString :String = ""
                    if pm.subLocality != nil {
                      addressString = addressString + pm.subLocality! + ", "
                    }
@@ -491,20 +563,14 @@ extension LocationSearchEventVC: GMSAutocompleteViewControllerDelegate {
                    }
                    print(addressString)
                    self.CurrenLocation = addressString
-                   self.searchFeildLocTfref.text = addressString
+                  // self.searchFeildLocTfref.text = addressString
                        self.currentAddressModel = AddressStruct(citystr: pm.thoroughfare ?? "", statestr: pm.locality ?? "", countrystr: pm.country ?? "", pincodestr: pm.postalCode ?? "", addressstr: pm.name ?? "", latstr: "\(place.coordinate.latitude)", longstr: "\(place.coordinate.longitude)")
                        self.currentAddressModel2 = AddressStruct(citystr: pm.thoroughfare ?? "", statestr: pm.locality ?? "", countrystr: pm.country ?? "", pincodestr: pm.postalCode ?? "", addressstr: pm.name ?? "", latstr: "\(place.coordinate.latitude)", longstr: "\(place.coordinate.longitude)")
                     }
                 }
             }
         })
-        let marker2 : GMSMarker = GMSMarker()
-        marker2.position = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        marker2.title = addressString
-        //marker.snippet = "USA"
-        marker2.icon = UIImage(named: "smallLogo")
-        marker2.map = self.googlemapviewref
-
+        
         //Api calling...
         self.defaultLocation = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         place.coordinate
@@ -527,7 +593,7 @@ extension LocationSearchEventVC: GMSAutocompleteViewControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
 }
-extension LocationSearchEventVC {
+extension LocationSearchManuallyVC {
     //MARK:- login func
     func MyPopularEventsMehtod(lat: String,Long: String){
 //        indicator.showActivityIndicator()
@@ -543,17 +609,17 @@ extension LocationSearchEventVC {
 //                categoryIDArr.append(self.SearchScreenModelArr[i].Category_id)
 //                categoryNameArr.append(self.SearchScreenModelArr[i].CategoryName)
 //            }
-//            
+//
 //            categoryId = categoryIDArr.joined(separator: ",")
 //            categoryName = categoryNameArr.joined(separator: ",")
 //        }
-//        
+//
 ////        lat:16.02053
 ////        long:79.923035
 ////        NationWide:0
 ////        DistanceinMiles:30
 ////        categorys:
-//        
+//
 //        let parameters = [
 //            "id":UserId,
 //            "lat":lat,
@@ -567,7 +633,7 @@ extension LocationSearchEventVC {
 //            "device_type":"IOS",
 //            "device_id":UIDevice.current.identifierForVendor!.uuidString,
 //            "device_token":newDeviceId
-//            
+//
 //        ] as! [String:String]
 //        NetworkManager.Apicalling(url: API_URl.NearByEventsURL, paramaters: parameters, httpMethodType: .post, success: { (response:nearByEventsModel) in
 //            print(response.data)
@@ -580,8 +646,8 @@ extension LocationSearchEventVC {
 //                        if let lat = self.popularEventsArr[i].latitude as? String,let long = self.popularEventsArr[i].longitude as? String{
 //                            defaultLocationstr = CLLocation(latitude: Double(lat) ?? 0.00, longitude: Double(long) ?? 0.00)
 //                        }
-//                        
-//                        
+//
+//
 //                        let marker = GMSMarker(position: defaultLocationstr.coordinate)
 //                        marker.appearAnimation = .pop
 //                        marker.title = self.popularEventsArr[i].event_name ?? ""
@@ -589,15 +655,15 @@ extension LocationSearchEventVC {
 //                           let State = self.popularEventsArr[i].state as? String,
 //                           let Country = self.popularEventsArr[i].country as? String,
 //                           let Pincode = self.popularEventsArr[i].zipcode as? String {
-//                            
+//
 //                            marker.snippet = address + " , " + State + " , " + Country + " , " + Pincode
 //                        }
-//                        
-//                        
+//
+//
 //                        // if let url_str = self.popularEventsArr[i].photo as? String {
 //                        marker.icon = UIImage(named: "smallLogo")
-//                        
-//                        
+//
+//
 //                        let frame = CGRect(x: 0, y: 0, width: 20, height: 20)
 //                        let imageViewRef = UIImageView(frame: frame)
 //                        if let imagestr = self.popularEventsArr[i].zipcode as? String {  if imagestr != "" {
@@ -610,13 +676,13 @@ extension LocationSearchEventVC {
 //                            imageViewRef.image = UIImage(named: "smallLogo")
 //                        }
 //                        marker.iconView = imageViewRef
-//                        
+//
 //                        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
 //                        //                             marker.icon.sd_setImage(with: URL(string: API_URl.ImageBaseURL +  url_str), placeholderImage: UIImage(named: "papularEvent"))
 //                        //}
 //                        marker.map = self.googlemapviewref
 //                    }
-//                    
+//
 //                    self.eventtblref.reloadData()
 //                }
 //            }else {
@@ -624,7 +690,7 @@ extension LocationSearchEventVC {
 //                //self.ShowAlert(message: response.message ?? "Something went wrong...")
 //            }
 //        }) { (errorMsg) in
-//            
+//
 //            indicator.hideActivityIndicator()
 //            if let err = errorMsg as? String{
 //                self.ShowAlert(message: err)
@@ -633,7 +699,7 @@ extension LocationSearchEventVC {
     }
     
 }
-extension LocationSearchEventVC {
+extension LocationSearchManuallyVC {
     func addRadiusCircle(location: CLLocation,distanceInMile: Int){
         
         self.DistanceInKM = "\(distanceInMile)"
@@ -651,7 +717,7 @@ extension LocationSearchEventVC {
     
  
 }
-extension LocationSearchEventVC :UITableViewDelegate,UITableViewDataSource {
+extension LocationSearchManuallyVC :UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.popularEventsArr.count
     }
@@ -735,4 +801,66 @@ extension LocationSearchEventVC :UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }
+}
+
+extension LocationSearchManuallyVC {
+    //MARK - Extension File
+    
+    @IBAction func statetfref(_ sender: Any) {
+        if self.countrynameTfref.text ?? "" == "" {
+            self.showToast2(message: "Please select country first...", font: .systemFont(ofSize: 12.0))
+        }else {
+            self.getStateListMethos(countryname: self.countrynameTfref.text ?? "")
+            self.StateBntref.isHidden = true
+        }
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == self.stateTFref {
+            let newLength = textField.text?.count
+            if(newLength ?? 0 <= 1){
+                self.StateBntref.isHidden = false
+                return true
+            }else{
+                self.StateBntref.isHidden = true
+                return false
+            }
+        }else {
+            return true
+        }
+    }
+    
+    @IBAction func ContinueBtnref(_ sender: Any) {
+        //  self.movetonextvc(id: "LocationSearchEventVC", storyBordid: "DashBoard")
+        var address_str = ""
+        if let zipCode =  self.zipCodeTFref.text as? String  {
+            address_str += zipCode + ","
+        }
+        if let Address = self.addressTFref.text as? String {
+            address_str += Address + ","
+        }
+        if  let cityName =  self.cityTfref.text as? String  {
+            address_str += cityName + ","
+        }
+        
+        if let statename =  self.stateTFref.text as? String  {
+            address_str += statename + ","
+        }
+        if let countryname =  self.countrynameTfref.text as? String  {
+            address_str += countryname + ","
+        }
+        switch self.ManualSearchValidation() {
+        case .Success:
+            print("done")
+            self.mydressFinder(Address: address_str)
+            self.manualSearchViewEnableAndDisable()
+        case .Error(let errorStr) :
+            print(errorStr)
+            self.showToast(message: errorStr, font: .systemFont(ofSize: 12.0))
+        }
+    }
+    
+//    @IBAction func backBtnref(_ sender: Any) {
+//        self.popToBackVC()
+//    }
+    
 }

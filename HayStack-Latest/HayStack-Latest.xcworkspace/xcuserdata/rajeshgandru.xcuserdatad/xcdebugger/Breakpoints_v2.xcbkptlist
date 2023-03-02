@@ -798,8 +798,8 @@
             filePath = "HayStack-Latest/Controllers/DashBoard/searchEvent/LocationSearchEventVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "318"
-            endingLineNumber = "318"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -878,8 +878,8 @@
             filePath = "HayStack-Latest/Controllers/DashBoard/searchEvent/LocationSearchEventVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
             landmarkName = "viewController(_:didAutocompleteWith:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -894,8 +894,8 @@
             filePath = "HayStack-Latest/Controllers/DashBoard/searchEvent/LocationSearchEventVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "310"
-            endingLineNumber = "310"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -926,8 +926,8 @@
             filePath = "HayStack-Latest/Controllers/DashBoard/searchEvent/LocationSearchEventVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
+            startingLineNumber = "643"
+            endingLineNumber = "643"
             landmarkName = "addRadiusCircle(location:distanceInMile:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -942,8 +942,8 @@
             filePath = "HayStack-Latest/Controllers/DashBoard/searchEvent/LocationSearchEventVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "636"
-            endingLineNumber = "636"
+            startingLineNumber = "644"
+            endingLineNumber = "644"
             landmarkName = "addRadiusCircle(location:distanceInMile:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -958,8 +958,8 @@
             filePath = "HayStack-Latest/Controllers/DashBoard/searchEvent/LocationSearchEventVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "640"
-            endingLineNumber = "640"
+            startingLineNumber = "648"
+            endingLineNumber = "648"
             landmarkName = "addRadiusCircle(location:distanceInMile:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -974,8 +974,8 @@
             filePath = "HayStack-Latest/Controllers/DashBoard/searchEvent/LocationSearchEventVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "641"
-            endingLineNumber = "641"
+            startingLineNumber = "649"
+            endingLineNumber = "649"
             landmarkName = "addRadiusCircle(location:distanceInMile:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1058,6 +1058,38 @@
             endingLineNumber = "292"
             landmarkName = "MyEventsMehtod()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3816539-683D-4A01-85CD-99B9227CD20E - 422c474f58b38acb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (HayStack_Latest.MyEventsModel) -&gt; () in HayStack_Latest.MyEventsVC.MyEventsMehtod() -&gt; ()"
+                  moduleName = "HayStack-Latest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajeshgandru/Documents/IOS_Projects/Anaad-Projects/Haystack-Latest/HayStack-Latest/HayStack-Latest/Controllers/DashBoard/MyEventsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "292"
+                  endingLineNumber = "292"
+                  offsetFromSymbolStart = "873">
+               </Location>
+               <Location
+                  uuid = "D3816539-683D-4A01-85CD-99B9227CD20E - 422c474f58b38acb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (HayStack_Latest.MyEventsModel) -&gt; () in HayStack_Latest.MyEventsVC.MyEventsMehtod() -&gt; ()"
+                  moduleName = "HayStack-Latest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajeshgandru/Documents/IOS_Projects/Anaad-Projects/Haystack-Latest/HayStack-Latest/HayStack-Latest/Controllers/DashBoard/MyEventsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "292"
+                  endingLineNumber = "292"
+                  offsetFromSymbolStart = "984">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1106,6 +1138,38 @@
             endingLineNumber = "150"
             landmarkName = "SearchEventMethod()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5CEA39E1-8796-4889-83F1-B6D6E7E236E4 - e366957a4566df2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HayStack_Latest.searchEventListVC.SearchEventMethod() -&gt; ()"
+                  moduleName = "HayStack-Latest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajeshgandru/Documents/IOS_Projects/Anaad-Projects/Haystack-Latest/HayStack-Latest/HayStack-Latest/Controllers/DashBoard/searchEvent/searchEventListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "150"
+                  endingLineNumber = "150"
+                  offsetFromSymbolStart = "6761">
+               </Location>
+               <Location
+                  uuid = "5CEA39E1-8796-4889-83F1-B6D6E7E236E4 - 9ac6c5a920252dab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (HayStack_Latest.SearchEventModel) -&gt; () in HayStack_Latest.searchEventListVC.SearchEventMethod() -&gt; ()"
+                  moduleName = "HayStack-Latest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajeshgandru/Documents/IOS_Projects/Anaad-Projects/Haystack-Latest/HayStack-Latest/HayStack-Latest/Controllers/DashBoard/searchEvent/searchEventListVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "107">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1122,6 +1186,38 @@
             endingLineNumber = "71"
             landmarkName = "Apicalling(url:paramaters:httpMethodType:success:failure:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8242EF79-05E8-4010-9A5E-796570C9FB25 - e2208b0a89053005"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static HayStack_Latest.NetworkManager.Apicalling&lt;&#x3c4;_0_0 where &#x3c4;_0_0: ObjectMapper.Mappable&gt;(url: Swift.String, paramaters: Swift.Dictionary&lt;Swift.String, Any&gt;, httpMethodType: Alamofire.HTTPMethod, success: (&#x3c4;_0_0) -&gt; (), failure: (Any) -&gt; ()) -&gt; ()"
+                  moduleName = "HayStack-Latest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajeshgandru/Documents/IOS_Projects/Anaad-Projects/Haystack-Latest/HayStack-Latest/HayStack-Latest/WebSupport/ApiManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "2198">
+               </Location>
+               <Location
+                  uuid = "8242EF79-05E8-4010-9A5E-796570C9FB25 - 27b2ee208a888e7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in static HayStack_Latest.NetworkManager.Apicalling&lt;&#x3c4;_0_0 where &#x3c4;_0_0: ObjectMapper.Mappable&gt;(url: Swift.String, paramaters: Swift.Dictionary&lt;Swift.String, Any&gt;, httpMethodType: Alamofire.HTTPMethod, success: (&#x3c4;_0_0) -&gt; (), failure: (Any) -&gt; ()) -&gt; ()"
+                  moduleName = "HayStack-Latest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rajeshgandru/Documents/IOS_Projects/Anaad-Projects/Haystack-Latest/HayStack-Latest/HayStack-Latest/WebSupport/ApiManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "314">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
