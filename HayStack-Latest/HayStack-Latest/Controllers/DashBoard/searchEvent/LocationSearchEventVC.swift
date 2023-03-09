@@ -112,6 +112,7 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
             }
         }
         
+        DispatchQueue.main.async {
         
         if CLLocationManager.locationServicesEnabled() {
             switch (CLLocationManager.authorizationStatus()) {
@@ -122,6 +123,8 @@ class LocationSearchEventVC: UIViewController,UITextFieldDelegate {
             }
         } else {
             print("Location services are not enabled")
+        }
+            
         }
          
         IsMenuOpend = true
@@ -530,106 +533,106 @@ extension LocationSearchEventVC: GMSAutocompleteViewControllerDelegate {
 extension LocationSearchEventVC {
     //MARK:- login func
     func MyPopularEventsMehtod(lat: String,Long: String){
-//        indicator.showActivityIndicator()
-//         var UserId = UserDefaults.standard.string(forKey: "userID")  ?? ""
-//        self.DistanceInKM = self.RadiusTfref.text ?? ""
-//        var categoryId = ""
-//        var categoryName = ""
-//        self.currentTimeforApi()
-//        if self.SearchScreenModelArr.count > 0 {
-//            var categoryIDArr : [String] = []
-//            var categoryNameArr : [String] = []
-//            for i in 0..<self.SearchScreenModelArr.count{
-//                categoryIDArr.append(self.SearchScreenModelArr[i].Category_id)
-//                categoryNameArr.append(self.SearchScreenModelArr[i].CategoryName)
-//            }
-//            
-//            categoryId = categoryIDArr.joined(separator: ",")
-//            categoryName = categoryNameArr.joined(separator: ",")
-//        }
-//        
-////        lat:16.02053
-////        long:79.923035
-////        NationWide:0
-////        DistanceinMiles:30
-////        categorys:
-//        
-//        let parameters = [
-//            "id":UserId,
-//            "lat":lat,
-//            "long":Long,
-//            "categorys":categoryId,
-//            "searchtype":"",
-//            "currentdate":self.CurrentDatestr,
-//            "endtime":self.CurrentTimeStr,
-//            "DistanceinMiles":self.DistanceInKM,
-//            "NationWide":self.isnationWide,
-//            "device_type":"IOS",
-//            "device_id":UIDevice.current.identifierForVendor!.uuidString,
-//            "device_token":newDeviceId
-//            
-//        ] as! [String:String]
-//        NetworkManager.Apicalling(url: API_URl.NearByEventsURL, paramaters: parameters, httpMethodType: .post, success: { (response:nearByEventsModel) in
-//            print(response.data)
-//            if response.status == "1" {
-//                indicator.hideActivityIndicator()
-//                if let response = response.data as? [nearByEventsModelData] {
-//                    self.popularEventsArr = response
-//                    for i in 0..<self.popularEventsArr.count {
-//                        var defaultLocationstr = CLLocation()
-//                        if let lat = self.popularEventsArr[i].latitude as? String,let long = self.popularEventsArr[i].longitude as? String{
-//                            defaultLocationstr = CLLocation(latitude: Double(lat) ?? 0.00, longitude: Double(long) ?? 0.00)
-//                        }
-//                        
-//                        
-//                        let marker = GMSMarker(position: defaultLocationstr.coordinate)
-//                        marker.appearAnimation = .pop
-//                        marker.title = self.popularEventsArr[i].event_name ?? ""
-//                        if let address = self.popularEventsArr[i].streetaddress,
-//                           let State = self.popularEventsArr[i].state as? String,
-//                           let Country = self.popularEventsArr[i].country as? String,
-//                           let Pincode = self.popularEventsArr[i].zipcode as? String {
-//                            
-//                            marker.snippet = address + " , " + State + " , " + Country + " , " + Pincode
-//                        }
-//                        
-//                        
-//                        // if let url_str = self.popularEventsArr[i].photo as? String {
-//                        marker.icon = UIImage(named: "smallLogo")
-//                        
-//                        
-//                        let frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-//                        let imageViewRef = UIImageView(frame: frame)
-//                        if let imagestr = self.popularEventsArr[i].zipcode as? String {  if imagestr != "" {
-//                            imageViewRef.sd_setImage(
-//                                with: URL(string: imagestr),
-//                                placeholderImage: UIImage(named: "smallLogo"))
-//                        }
-//                        imageViewRef.image = UIImage(named: "smallLogo")
-//                        }else {
-//                            imageViewRef.image = UIImage(named: "smallLogo")
-//                        }
-//                        marker.iconView = imageViewRef
-//                        
-//                        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
-//                        //                             marker.icon.sd_setImage(with: URL(string: API_URl.ImageBaseURL +  url_str), placeholderImage: UIImage(named: "papularEvent"))
-//                        //}
-//                        marker.map = self.googlemapviewref
-//                    }
-//                    
-//                    self.eventtblref.reloadData()
-//                }
-//            }else {
-//                indicator.hideActivityIndicator()
-//                //self.ShowAlert(message: response.message ?? "Something went wrong...")
-//            }
-//        }) { (errorMsg) in
-//            
-//            indicator.hideActivityIndicator()
-//            if let err = errorMsg as? String{
-//                self.ShowAlert(message: err)
-//            }
-//        }
+        indicator.showActivityIndicator()
+         var UserId = UserDefaults.standard.string(forKey: "userID")  ?? ""
+        self.DistanceInKM = self.RadiusTfref.text ?? ""
+        var categoryId = ""
+        var categoryName = ""
+        self.currentTimeforApi()
+        if self.SearchScreenModelArr.count > 0 {
+            var categoryIDArr : [String] = []
+            var categoryNameArr : [String] = []
+            for i in 0..<self.SearchScreenModelArr.count{
+                categoryIDArr.append(self.SearchScreenModelArr[i].Category_id)
+                categoryNameArr.append(self.SearchScreenModelArr[i].CategoryName)
+            }
+            
+            categoryId = categoryIDArr.joined(separator: ",")
+            categoryName = categoryNameArr.joined(separator: ",")
+        }
+        
+//        lat:16.02053
+//        long:79.923035
+//        NationWide:0
+//        DistanceinMiles:30
+//        categorys:
+        
+        let parameters = [
+            "id":UserId,
+            "lat":lat,
+            "long":Long,
+            "categorys":categoryId,
+            "searchtype":"",
+            "currentdate":self.CurrentDatestr,
+            "endtime":self.CurrentTimeStr,
+            "DistanceinMiles":self.DistanceInKM,
+            "NationWide":self.isnationWide,
+            "device_type":"IOS",
+            "device_id":UIDevice.current.identifierForVendor!.uuidString,
+            "device_token":newDeviceId
+            
+        ] as! [String:String]
+        NetworkManager.Apicalling(url: API_URl.NearByEventsURL, paramaters: parameters, httpMethodType: .post, success: { (response:nearByEventsModel) in
+            print(response.data)
+            if response.status == "1" {
+                indicator.hideActivityIndicator()
+                if let response = response.data as? [nearByEventsModelData] {
+                    self.popularEventsArr = response
+                    for i in 0..<self.popularEventsArr.count {
+                        var defaultLocationstr = CLLocation()
+                        if let lat = self.popularEventsArr[i].latitude as? String,let long = self.popularEventsArr[i].longitude as? String{
+                            defaultLocationstr = CLLocation(latitude: Double(lat) ?? 0.00, longitude: Double(long) ?? 0.00)
+                        }
+                        
+                        
+                        let marker = GMSMarker(position: defaultLocationstr.coordinate)
+                        marker.appearAnimation = .pop
+                        marker.title = self.popularEventsArr[i].event_name ?? ""
+                        if let address = self.popularEventsArr[i].streetaddress,
+                           let State = self.popularEventsArr[i].state as? String,
+                           let Country = self.popularEventsArr[i].country as? String,
+                           let Pincode = self.popularEventsArr[i].zipcode as? String {
+                            
+                            marker.snippet = address + " , " + State + " , " + Country + " , " + Pincode
+                        }
+                        
+                        
+                        // if let url_str = self.popularEventsArr[i].photo as? String {
+                        marker.icon = UIImage(named: "smallLogo")
+                        
+                        
+                        let frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+                        let imageViewRef = UIImageView(frame: frame)
+                        if let imagestr = self.popularEventsArr[i].zipcode as? String {  if imagestr != "" {
+                            imageViewRef.sd_setImage(
+                                with: URL(string: imagestr),
+                                placeholderImage: UIImage(named: "smallLogo"))
+                        }
+                        imageViewRef.image = UIImage(named: "smallLogo")
+                        }else {
+                            imageViewRef.image = UIImage(named: "smallLogo")
+                        }
+                        marker.iconView = imageViewRef
+                        
+                        marker.groundAnchor = CGPoint(x: 0.5, y: 0.5)
+                        //                             marker.icon.sd_setImage(with: URL(string: API_URl.ImageBaseURL +  url_str), placeholderImage: UIImage(named: "papularEvent"))
+                        //}
+                        marker.map = self.googlemapviewref
+                    }
+                    
+                    self.eventtblref.reloadData()
+                }
+            }else {
+                indicator.hideActivityIndicator()
+                //self.ShowAlert(message: response.message ?? "Something went wrong...")
+            }
+        }) { (errorMsg) in
+            
+            indicator.hideActivityIndicator()
+            if let err = errorMsg as? String{
+                self.ShowAlert(message: err)
+            }
+        }
     }
     
 }

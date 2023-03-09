@@ -4101,7 +4101,7 @@ Going further!</string>
                                 <rect key="frame" x="0.0" y="48" width="414" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ON-Xb-gOy">
-                                        <rect key="frame" x="145" y="3" width="124.5" height="52"/>
+                                        <rect key="frame" x="144" y="3" width="126.5" height="52"/>
                                         <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="24"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -7511,16 +7511,16 @@ Going further!</string>
             <size key="intrinsicContentSize" width="60.5" height="18.5"/>
         </designable>
         <designable name="f7L-gt-LlD">
-            <size key="intrinsicContentSize" width="61" height="19.5"/>
+            <size key="intrinsicContentSize" width="62" height="19"/>
         </designable>
         <designable name="hi7-99-g7O">
             <size key="intrinsicContentSize" width="67.5" height="18.5"/>
         </designable>
         <designable name="i46-bT-eNh">
-            <size key="intrinsicContentSize" width="61.5" height="19.5"/>
+            <size key="intrinsicContentSize" width="63.5" height="19"/>
         </designable>
         <designable name="iL6-60-pA1">
-            <size key="intrinsicContentSize" width="68.5" height="19.5"/>
+            <size key="intrinsicContentSize" width="68" height="19"/>
         </designable>
         <designable name="q56-oC-ddO">
             <size key="intrinsicContentSize" width="-1" height="83"/>
@@ -7535,7 +7535,7 @@ Going further!</string>
             <size key="intrinsicContentSize" width="60.5" height="18.5"/>
         </designable>
         <designable name="yQE-bn-jEs">
-            <size key="intrinsicContentSize" width="69" height="19.5"/>
+            <size key="intrinsicContentSize" width="69.5" height="19"/>
         </designable>
         <designable name="ybU-Wj-dH4">
             <size key="intrinsicContentSize" width="60.5" height="18.5"/>
